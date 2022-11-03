@@ -18,7 +18,7 @@
 
 #### 1.2 I/O控制方式
 
-![os_io_control](/Users/zhiwei/Documents/WorkSpace/Studio/AndroidInterviewNotes/操作系统/assets/os_io_control.png)
+![os_io_control](./assets/os_io_control.png)
 
 - 程序直接控制方式：CPU和I/O设备串行工作，由用户程序直接控制主存或CPU和外设的信息传送。
 - 中断驱动方式：允许I/O设备主动打断CPU的运行并请求服务。
@@ -52,7 +52,7 @@
 
     1. 单缓存、双缓存、循环缓存、缓冲池
 
-![os_io_cache](/Users/zhiwei/Documents/WorkSpace/Studio/AndroidInterviewNotes/操作系统/assets/os_io_cache.jpg)
+![os_io_cache](./assets/os_io_cache.jpg)
 
 - 设备分配与回收
 
