@@ -40,6 +40,8 @@ B:onStop -> onDestroy
 //A:不会调用 onStop   
 ```
 
+![image-20221110140455246](./assets/android_activity_backstack.png)
+
 ### 4 Android中进程的优先级？
 
 * 前台进程：与用户正在交互的 Activity 或者 Activity 用到的 Service 等，如果系统内存不足时前台进程是最晚被杀死的。

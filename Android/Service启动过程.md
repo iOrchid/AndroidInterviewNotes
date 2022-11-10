@@ -185,7 +185,7 @@ ComponentName startServiceLocked(IApplicationThread caller, Intent service, Stri
     }
 ```
 
-### 代码一：**ActivityThread**#scheduleCreateService()
+### 代码一：ActivityThread#scheduleCreateService()
 
 scheduleCreateService() 其实就是通过Handler机制进行线程切换，最后会调用handleCreateService();
 
