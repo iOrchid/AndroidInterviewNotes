@@ -8,7 +8,6 @@
 - [ ] [算法基础](https://github.com/chefyuan/algorithm-base)
 - [ ] [Android面试题](https://github.com/Moosphan/Android-Daily-Interview)
 - [ ] [剑指offer](https://github.com/gatieme/CodingInterviews)
-- [ ] [Android开发知识点](https://github.com/AweiLoveAndroid/CommonDevKnowledge)
 - [ ] [JavaInterviewQuestions](https://github.com/Homiss/Java-interview-questions)
 - [ ] [leetcode100](https://github.com/mJackie/leetcode)
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
@@ -55,4 +54,6 @@
 
 7. [AndroidAll](https://github.com/chiclaim/AndroidAll)
 
-8. 
+8. [Android开发知识点](https://github.com/AweiLoveAndroid/CommonDevKnowledge)
+
+9. 
