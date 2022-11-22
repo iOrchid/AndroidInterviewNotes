@@ -9,7 +9,6 @@
 - [ ] [Android面试题](https://github.com/Moosphan/Android-Daily-Interview)
 - [ ] [剑指offer](https://github.com/gatieme/CodingInterviews)
 - [ ] [Android开发知识点](https://github.com/AweiLoveAndroid/CommonDevKnowledge)
-- [ ] [Android源码解读](https://github.com/jeanboydev/Android-ReadTheFuckingSourceCode)
 - [ ] [JavaInterviewQuestions](https://github.com/Homiss/Java-interview-questions)
 - [ ] [leetcode100](https://github.com/mJackie/leetcode)
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
@@ -52,4 +51,8 @@
 
 5. [CS-Notes](https://github.com/CyC2018/CS-Notes)
 
-6. [AndroidNote](https://github.com/linsir6/AndroidNote)
+6. [Android源码解读](https://github.com/jeanboydev/Android-ReadTheFuckingSourceCode)
+
+7. [AndroidAll](https://github.com/chiclaim/AndroidAll)
+
+8. 
