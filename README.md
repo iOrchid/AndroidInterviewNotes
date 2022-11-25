@@ -11,12 +11,15 @@
 - [ ] [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 - [ ] [面试反问](https://github.com/yifeikong/reverse-interview-zh)
 - [ ] [编程书籍](https://github.com/jobbole/awesome-programming-books)
-- [ ] [算法基础](https://github.com/chefyuan/algorithm-base)
+- [ ] [算法基础](https://github.com/chefyuan/algorithm-base)[^程序厨]
 - [ ] [Android面试题](https://github.com/Moosphan/Android-Daily-Interview)
 - [ ] [剑指offer](https://github.com/gatieme/CodingInterviews)
 - [ ] [leetcode100](https://github.com/mJackie/leetcode)
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
 - [ ] [leetcode mater](https://github.com/youngyangyang04/leetcode-master)
+- [ ] [leetcode animation](https://github.com/MisterBooo/LeetCodeAnimation)
+
+
 
 
 
@@ -62,6 +65,10 @@
 
 9. [JavaInterviewQuestions](https://github.com/Homiss/Java-interview-questions)
 
-10. 
+10. [吴师兄算法](https://blog.algomooc.com/)(在线GitBook)
 
-11. 
+11. [AndroidGuide](https://github.com/leavesCZY/AndroidGuide)
+
+12. [^程序厨]:https://www.chengxuchu.com/#/
+
+13. 
