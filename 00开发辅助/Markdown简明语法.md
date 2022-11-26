@@ -108,7 +108,7 @@ $$x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 11、图片，类似于链接
 
 - 行内式,，格式`![title]`(url)	,如 ： ![摩托](https://img-blog.csdnimg.cn/fdd7a83d853a4188b3fe070087152402.jpeg)- 参考式，```![name][id]```，在需要的地方配置`[id]:imagePath`,
-- 如(typora支持，但csdn不支持该格式),![摩托2][motor]
+- 如(**typora**支持，但csdn不支持该格式),![摩托2][motor]
 [motor]:https://img-blog.csdnimg.cn/fdd7a83d853a4188b3fe070087152402.jpeg
 
 - **好像id不可以是数字哦**
@@ -198,6 +198,6 @@ gantt
 ```
 
 更多的图表语法，可查看[Mermaid](https://mermaidjs.github.io/)
-<font color="#ff0000">注：本文使用的是Typora编辑器，有些语法特性，CSDN不一定支持。墙裂推荐使用Typora！</font>
+<font color="#ff0000">注：本文使用的是**Typora**编辑器，有些语法特性，CSDN不一定支持。墙裂推荐使用**Typora**！</font>
 
-[^1]:注解，Markdown、AsciiDoc，Latex都挺专业。
+[^1]:注解，Markdown、AsciiDoc，Latex都挺专业的文字排版工具。
