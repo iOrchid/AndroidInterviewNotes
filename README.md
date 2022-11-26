@@ -6,7 +6,44 @@
 >
 > ————闲暇之余慢慢整理，较慢，小伙伴觉得有帮助的可以给个`star`鼓励一下。
 
-#### 待整理项目
+#### 一、编程能力锤炼路线图[底部](#bottom)
+
+- [ ] 计算机基础[中间](#middle)
+- [ ] 操作系统
+- [ ] 网络基础
+- [ ] 数据结构与算法
+- [ ] 辅助技能
+  - [ ] 图标文档
+    - [ ] Markdown
+    - [ ] 流程图
+    - [ ] UML
+      - [ ] 类图
+      - [ ] 时序图
+      - [ ] 架构图
+      - [ ] 用例图
+  - [ ] 设计模式
+    - [ ] 基础设计模式
+    - [ ] MVX
+  - [ ] Shell脚本(Bat批处理)
+  - [ ] Regular正则
+  - [ ] Git技能
+  - [ ] Linux基础编程
+  - [ ] Python编程
+
+#### 二、Android技能锤炼
+
+- [ ] Java基础
+- [ ] Kotiln编程
+- [ ] Android基础
+- [ ] Android进阶
+
+#### 三、附言
+
+> 知识需要系统化梳理、沉淀，学习提升自我能力。当自强，奋发努力，自勉，自律！！！
+>
+> ​      																																------2020年06月01日 志威·记
+
+#### 四、待整理项目
 
 - [ ] [JavaGuide](https://github.com/Snailclimb/JavaGuide)
 - [ ] [面试反问](https://github.com/yifeikong/reverse-interview-zh)
@@ -18,30 +55,6 @@
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
 - [ ] [leetcode mater](https://github.com/youngyangyang04/leetcode-master)
 - [ ] [leetcode animation](https://github.com/MisterBooo/LeetCodeAnimation)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -72,3 +85,11 @@
 12. [^程序厨]:https://www.chengxuchu.com/#/
 
 13. 
+
+
+
+
+
+
+
+[↑回到顶部](#top) 
