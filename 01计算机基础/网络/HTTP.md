@@ -55,7 +55,7 @@
         * [可缓存](#可缓存)
         * [XMLHttpRequest](#xmlhttprequest)
     * [参考资料](#参考资料)
-<!-- GFM-TOC -->
+    <!-- GFM-TOC -->
 
 
 ## 一 、基础概念
