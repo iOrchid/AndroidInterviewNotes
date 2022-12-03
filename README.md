@@ -57,6 +57,7 @@
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
 - [ ] [leetcode mater](https://github.com/youngyangyang04/leetcode-master)
 - [ ] [leetcode animation](https://github.com/MisterBooo/LeetCodeAnimation)
+- [ ] [FuckingAlgorithm](https://github.com/labuladong/fucking-algorithm)
 
 
 
@@ -90,6 +91,6 @@
 
 
 
-
+[技能](#二、Android技能锤炼)
 
 [↑回到顶部](#top) 
