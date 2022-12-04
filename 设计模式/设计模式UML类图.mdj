@@ -82,7 +82,7 @@
 													"font": "Arial;13;0",
 													"left": -1488,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -277,7 +277,7 @@
 													"font": "Arial;13;0",
 													"left": -1488,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -765,7 +765,7 @@
 													"font": "Arial;13;0",
 													"left": 356.627197265625,
 													"top": 25,
-													"width": 92.12353515625,
+													"width": 96.5509033203125,
 													"height": 13,
 													"text": "«interface»"
 												},
@@ -778,7 +778,7 @@
 													"font": "Arial;13;1",
 													"left": 356.627197265625,
 													"top": 40,
-													"width": 92.12353515625,
+													"width": 96.5509033203125,
 													"height": 13,
 													"text": "Cloneable"
 												},
@@ -792,7 +792,7 @@
 													"font": "Arial;13;0",
 													"left": -1899.4716796875,
 													"top": 439,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -813,7 +813,7 @@
 											"font": "Arial;13;0",
 											"left": 351.627197265625,
 											"top": 20,
-											"width": 102.12353515625,
+											"width": 106.5509033203125,
 											"height": 38,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFl3ISt1JSfe2o="
@@ -866,7 +866,7 @@
 													"font": "Arial;13;0",
 													"left": 356.627197265625,
 													"top": 63,
-													"width": 92.12353515625,
+													"width": 96.5509033203125,
 													"height": 13,
 													"text": "+clone(): Object",
 													"horizontalAlignment": 0
@@ -875,7 +875,7 @@
 											"font": "Arial;13;0",
 											"left": 351.627197265625,
 											"top": 58,
-											"width": 102.12353515625,
+											"width": 106.5509033203125,
 											"height": 23
 										},
 										{
@@ -915,7 +915,7 @@
 									"containerChangeable": true,
 									"left": 351.627197265625,
 									"top": 20,
-									"width": 102.12353515625,
+									"width": 106.5509033203125,
 									"height": 72,
 									"nameCompartment": {
 										"$ref": "AAAAAAFl3ISt1JSe/bY="
@@ -1050,7 +1050,7 @@
 											"font": "Arial;13;0",
 											"left": 100,
 											"top": 422,
-											"width": 34.32177734375,
+											"width": 35.13896179199219,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -1343,7 +1343,7 @@
 													"font": "Arial;13;1",
 													"left": 279,
 													"top": 305,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "Rectangle"
 												},
@@ -1357,7 +1357,7 @@
 													"font": "Arial;13;0",
 													"left": -1824,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -1378,7 +1378,7 @@
 											"font": "Arial;13;0",
 											"left": 274,
 											"top": 298,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFl3IW7xZWw1Ko="
@@ -1415,7 +1415,7 @@
 													"font": "Arial;13;0",
 													"left": 279,
 													"top": 328,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+type: String",
 													"horizontalAlignment": 0
@@ -1424,7 +1424,7 @@
 											"font": "Arial;13;0",
 											"left": 274,
 											"top": 323,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 23
 										},
 										{
@@ -1449,7 +1449,7 @@
 													"font": "Arial;13;0",
 													"left": 279,
 													"top": 351,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getType(): String",
 													"horizontalAlignment": 0
@@ -1466,7 +1466,7 @@
 													"font": "Arial;13;0",
 													"left": 279,
 													"top": 366,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getID(): String",
 													"horizontalAlignment": 0
@@ -1483,7 +1483,7 @@
 													"font": "Arial;13;0",
 													"left": 279,
 													"top": 381,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+setID()",
 													"horizontalAlignment": 0
@@ -1500,7 +1500,7 @@
 													"font": "Arial;13;0",
 													"left": 279,
 													"top": 396,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+clone(): Object",
 													"horizontalAlignment": 0
@@ -1509,7 +1509,7 @@
 											"font": "Arial;13;0",
 											"left": 274,
 											"top": 346,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 68
 										},
 										{
@@ -1549,7 +1549,7 @@
 									"containerChangeable": true,
 									"left": 274,
 									"top": 298,
-									"width": 113.68896484375,
+									"width": 118.97889709472656,
 									"height": 116,
 									"nameCompartment": {
 										"$ref": "AAAAAAFl3IW7xZWvpUQ="
@@ -1702,7 +1702,7 @@
 													"font": "Arial;13;1",
 													"left": 422.68896484375,
 													"top": 305,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "Circle"
 												},
@@ -1716,7 +1716,7 @@
 													"font": "Arial;13;0",
 													"left": -1237.3779296875,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -1737,7 +1737,7 @@
 											"font": "Arial;13;0",
 											"left": 417.68896484375,
 											"top": 298,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFl3IhH5pnPlSs="
@@ -1774,7 +1774,7 @@
 													"font": "Arial;13;0",
 													"left": 422.68896484375,
 													"top": 328,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+type: String",
 													"horizontalAlignment": 0
@@ -1783,7 +1783,7 @@
 											"font": "Arial;13;0",
 											"left": 417.68896484375,
 											"top": 323,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 23
 										},
 										{
@@ -1808,7 +1808,7 @@
 													"font": "Arial;13;0",
 													"left": 422.68896484375,
 													"top": 351,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getType(): String",
 													"horizontalAlignment": 0
@@ -1825,7 +1825,7 @@
 													"font": "Arial;13;0",
 													"left": 422.68896484375,
 													"top": 366,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getID(): String",
 													"horizontalAlignment": 0
@@ -1842,7 +1842,7 @@
 													"font": "Arial;13;0",
 													"left": 422.68896484375,
 													"top": 381,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+setID()",
 													"horizontalAlignment": 0
@@ -1859,7 +1859,7 @@
 													"font": "Arial;13;0",
 													"left": 422.68896484375,
 													"top": 396,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+clone(): Object",
 													"horizontalAlignment": 0
@@ -1868,7 +1868,7 @@
 											"font": "Arial;13;0",
 											"left": 417.68896484375,
 											"top": 346,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 68
 										},
 										{
@@ -1908,7 +1908,7 @@
 									"containerChangeable": true,
 									"left": 417.68896484375,
 									"top": 298,
-									"width": 113.68896484375,
+									"width": 118.97889709472656,
 									"height": 116,
 									"nameCompartment": {
 										"$ref": "AAAAAAFl3IhH5pnOlnE="
@@ -2061,7 +2061,7 @@
 													"font": "Arial;13;1",
 													"left": 566.3779296875,
 													"top": 305,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "Square"
 												},
@@ -2075,7 +2075,7 @@
 													"font": "Arial;13;0",
 													"left": -975.2177734375,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 原型模式)"
 												},
@@ -2096,7 +2096,7 @@
 											"font": "Arial;13;0",
 											"left": 561.3779296875,
 											"top": 298,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFl3IhIzJobtQw="
@@ -2133,7 +2133,7 @@
 													"font": "Arial;13;0",
 													"left": 566.3779296875,
 													"top": 328,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+type: String",
 													"horizontalAlignment": 0
@@ -2142,7 +2142,7 @@
 											"font": "Arial;13;0",
 											"left": 561.3779296875,
 											"top": 323,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 23
 										},
 										{
@@ -2167,7 +2167,7 @@
 													"font": "Arial;13;0",
 													"left": 566.3779296875,
 													"top": 351,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getType(): String",
 													"horizontalAlignment": 0
@@ -2184,7 +2184,7 @@
 													"font": "Arial;13;0",
 													"left": 566.3779296875,
 													"top": 366,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+getID(): String",
 													"horizontalAlignment": 0
@@ -2201,9 +2201,9 @@
 													"font": "Arial;13;0",
 													"left": 566.3779296875,
 													"top": 381,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
-													"text": "+Operation1()",
+													"text": "+setID()",
 													"horizontalAlignment": 0
 												},
 												{
@@ -2218,7 +2218,7 @@
 													"font": "Arial;13;0",
 													"left": 566.3779296875,
 													"top": 396,
-													"width": 103.68896484375,
+													"width": 108.97889709472656,
 													"height": 13,
 													"text": "+clone(): Object",
 													"horizontalAlignment": 0
@@ -2227,7 +2227,7 @@
 											"font": "Arial;13;0",
 											"left": 561.3779296875,
 											"top": 346,
-											"width": 113.68896484375,
+											"width": 118.97889709472656,
 											"height": 68
 										},
 										{
@@ -2267,7 +2267,7 @@
 									"containerChangeable": true,
 									"left": 561.3779296875,
 									"top": 298,
-									"width": 113.68896484375,
+									"width": 118.97889709472656,
 									"height": 116,
 									"nameCompartment": {
 										"$ref": "AAAAAAFl3IhIzJoa09g="
@@ -2399,9 +2399,9 @@
 												"$ref": "AAAAAAFl3I5PaJ5EysM="
 											},
 											"font": "Arial;13;0",
-											"left": 104,
+											"left": 103,
 											"top": 253,
-											"width": 45.169921875,
+											"width": 46.695953369140625,
 											"height": 13,
 											"alpha": -4.783788407030097,
 											"distance": 23.769728648009426,
@@ -2678,8 +2678,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl3IDXF5NtcBQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -2727,8 +2726,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl3IEoDJOe/dQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -3207,7 +3205,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFl3IhIzJoXZKQ="
 									},
-									"name": "Operation1"
+									"name": "setID"
 								},
 								{
 									"_type": "UMLOperation",
@@ -3305,7 +3303,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"top": -32,
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -3495,7 +3493,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -3680,7 +3678,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -3865,7 +3863,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -4021,7 +4019,7 @@
 											"font": "Arial;13;0",
 											"left": 405,
 											"top": 87,
-											"width": 59.591796875,
+											"width": 59.864990234375,
 											"height": 13,
 											"alpha": 0.7523871314015906,
 											"distance": 41.72529209005013,
@@ -4337,7 +4335,7 @@
 													"font": "Arial;13;0",
 													"left": 48,
 													"top": -96,
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -4486,7 +4484,7 @@
 									"font": "Arial;13;0",
 									"left": 20,
 									"top": 403,
-									"width": 414.341796875,
+									"width": 416.3049621582031,
 									"height": 40,
 									"text": "简单工厂模式：\n依赖接口，使用多态，在Factory中根据参数，创建对应的具体对象。"
 								},
@@ -4504,7 +4502,7 @@
 										"$ref": "AAAAAAFlyJRsiiZZ4M4="
 									},
 									"lineStyle": 3,
-									"points": "226:402;227:360;307:327"
+									"points": "227:402;227:360;307:327"
 								},
 								{
 									"_type": "UMLNoteView",
@@ -4515,7 +4513,7 @@
 									"font": "Arial;13;0",
 									"left": 739.8045654296875,
 									"top": 150,
-									"width": 267.76806640625,
+									"width": 268.98895263671875,
 									"height": 48,
 									"text": "Shape接口，有draw函数，具体子类来实现"
 								},
@@ -4544,7 +4542,7 @@
 									"font": "Arial;13;0",
 									"left": 521.75634765625,
 									"top": 269,
-									"width": 332.76806640625,
+									"width": 333.98895263671875,
 									"height": 40,
 									"text": "具体的Shape实现类，根据自身特性，完成draw函数。"
 								},
@@ -4562,7 +4560,7 @@
 										"$ref": "AAAAAAFlyJfRFidQ4qI="
 									},
 									"lineStyle": 3,
-									"points": "650:268;559:218;460:187"
+									"points": "651:268;559:218;460:187"
 								},
 								{
 									"_type": "UMLNoteLinkView",
@@ -4578,7 +4576,7 @@
 										"$ref": "AAAAAAFlyJfRFidQ4qI="
 									},
 									"lineStyle": 3,
-									"points": "674:268;643:218;582:192"
+									"points": "675:268;643:218;582:192"
 								},
 								{
 									"_type": "UMLNoteLinkView",
@@ -4594,7 +4592,7 @@
 										"$ref": "AAAAAAFlyJfRFidQ4qI="
 									},
 									"lineStyle": 3,
-									"points": "696:268;718:218;700:203"
+									"points": "697:268;718:218;700:203"
 								},
 								{
 									"_type": "UMLAssociationView",
@@ -5454,7 +5452,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 简单工厂模式)"
 												},
@@ -5736,7 +5734,7 @@
 											"font": "Arial;13;0",
 											"left": 506,
 											"top": 289,
-											"width": 59.591796875,
+											"width": 59.864990234375,
 											"height": 13,
 											"alpha": 1.0229784818156396,
 											"distance": 53.71219600798314,
@@ -6103,8 +6101,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyJG2VCXyfLI="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -6131,8 +6128,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyJG2VCXyfLI="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -6159,8 +6155,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyJG2VCXyfLI="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -6220,8 +6215,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyK2UEChc968="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -6330,7 +6324,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": 16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 单例模式)"
 												},
@@ -6520,7 +6514,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 单例模式)"
 												},
@@ -6590,6 +6584,7 @@
 													"model": {
 														"$ref": "AAAAAAFl2/16I4cToDQ="
 													},
+													"visible": false,
 													"font": "Arial;13;0",
 													"left": 397,
 													"top": 437,
@@ -6603,7 +6598,7 @@
 											"left": 392,
 											"top": 417,
 											"width": 272,
-											"height": 38
+											"height": 23
 										},
 										{
 											"_type": "UMLOperationCompartmentView",
@@ -6626,7 +6621,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 397,
-													"top": 460,
+													"top": 445,
 													"width": 262,
 													"height": 13,
 													"text": "-SingletonObject()",
@@ -6643,7 +6638,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 397,
-													"top": 475,
+													"top": 460,
 													"width": 262,
 													"height": 13,
 													"text": "+getInsatance(): SingletonObject",
@@ -6660,7 +6655,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 397,
-													"top": 490,
+													"top": 475,
 													"width": 262,
 													"height": 13,
 													"text": "+showMessage()",
@@ -6669,7 +6664,7 @@
 											],
 											"font": "Arial;13;0",
 											"left": 392,
-											"top": 455,
+											"top": 440,
 											"width": 272,
 											"height": 53
 										},
@@ -6840,12 +6835,12 @@
 												"$ref": "AAAAAAFl2/a0z4WWuXY="
 											},
 											"font": "Arial;13;0",
-											"left": 509,
-											"top": 292,
-											"width": 27.82177734375,
+											"left": 495,
+											"top": 312,
+											"width": 28.573974609375,
 											"height": 13,
-											"alpha": -0.5667291502963492,
-											"distance": 13.038404810405298,
+											"alpha": -0.5913108018239961,
+											"distance": 36.61966684720111,
 											"hostEdge": {
 												"$ref": "AAAAAAFl2/a0z4WZn+A="
 											},
@@ -7114,9 +7109,9 @@
 												"$ref": "AAAAAAFl2/cmRIZHi64="
 											},
 											"font": "Arial;13;0",
-											"left": 712,
+											"left": 711,
 											"top": 407,
-											"width": 41.5517578125,
+											"width": 43.731964111328125,
 											"height": 13,
 											"alpha": -1.6777037536948045,
 											"distance": 206.17710833164773,
@@ -7329,8 +7324,7 @@
 										"name": "ask",
 										"reference": {
 											"$ref": "AAAAAAFl2/J1NoUPGgQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -7377,8 +7371,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl2/LjxYVApmI="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -7555,7 +7548,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 抽象工厂模式)"
 												},
@@ -7740,7 +7733,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 抽象工厂模式)"
 												},
@@ -7820,7 +7813,7 @@
 											"font": "Arial;13;0",
 											"left": 616,
 											"top": 179,
-											"width": 185.91259765625,
+											"width": 195.4838104248047,
 											"height": 23
 										},
 										{
@@ -7896,7 +7889,7 @@
 											"font": "Arial;13;0",
 											"left": 818,
 											"top": 206,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -8195,7 +8188,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 抽象工厂模式)"
 												},
@@ -8368,7 +8361,7 @@
 											"font": "Arial;13;0",
 											"left": 569,
 											"top": 204,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -8667,7 +8660,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 抽象工厂模式)"
 												},
@@ -8854,7 +8847,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": 384,
-													"width": 116.27001953125,
+													"width": 119.31396484375,
 													"height": 13,
 													"text": "(from 抽象工厂模式)"
 												},
@@ -9013,7 +9006,7 @@
 											"font": "Arial;13;0",
 											"left": 370,
 											"top": 262,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -9108,7 +9101,7 @@
 											"font": "Arial;13;0",
 											"left": 617,
 											"top": 285,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -11381,7 +11374,7 @@
 											"font": "Arial;13;0",
 											"left": 327,
 											"top": 449,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": 1.6243164171937965,
 											"distance": 23,
@@ -11714,7 +11707,7 @@
 											"font": "Arial;13;0",
 											"left": 816,
 											"top": 431,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": 0.6052153582047529,
 											"distance": 48.41487374764082,
@@ -11924,8 +11917,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyK6+8Sn0U30="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -11984,8 +11976,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyK8r4ionANc="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -12108,8 +12099,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFlyLELoStafN4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -12184,8 +12174,7 @@
 										"name": "创建",
 										"reference": {
 											"$ref": "AAAAAAFlyLFbICvDWZs="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -12549,7 +12538,7 @@
 													"font": "Arial;13;0",
 													"left": -1584,
 													"top": 32,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -12744,7 +12733,7 @@
 													"font": "Arial;13;0",
 													"left": -1584,
 													"top": 32,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -12910,7 +12899,7 @@
 									"font": "Arial;13;0",
 									"left": 741,
 									"top": 56,
-									"width": 140.61181640625,
+									"width": 143.5,
 									"height": 50,
 									"text": "套餐创建者，可创建 有蔬菜/无蔬菜的套餐"
 								},
@@ -12985,7 +12974,7 @@
 													"font": "Arial;13;0",
 													"left": -1584,
 													"top": 32,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -13187,7 +13176,7 @@
 									"font": "Arial;13;0",
 									"left": 749,
 									"top": 208,
-									"width": 234.53173828125,
+									"width": 236.90493774414062,
 									"height": 55,
 									"text": "Meal指套餐\nItem是接口，套餐组成模块的Item\nPacking是接口，Item食物的打包方式"
 								},
@@ -13263,7 +13252,7 @@
 													"font": "Arial;13;0",
 													"left": -1360,
 													"top": 48,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -13380,7 +13369,7 @@
 											"font": "Arial;13;0",
 											"left": 504,
 											"top": 414,
-											"width": 124.53076171875,
+											"width": 129.31390380859375,
 											"height": 53
 										},
 										{
@@ -13495,7 +13484,7 @@
 													"font": "Arial;13;0",
 													"left": -2368,
 													"top": 208,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -13673,7 +13662,7 @@
 													"font": "Arial;13;0",
 													"left": -1760,
 													"top": 64,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -13943,7 +13932,7 @@
 													"font": "Arial;13;0",
 													"left": -857.83984375,
 													"top": 48,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -14086,7 +14075,7 @@
 											"font": "Arial;13;0",
 											"left": 757,
 											"top": 488,
-											"width": 59.591796875,
+											"width": 59.864990234375,
 											"height": 13,
 											"alpha": 3.7424244482726934,
 											"distance": 64.8459713474939,
@@ -14181,7 +14170,7 @@
 											"font": "Arial;13;0",
 											"left": 342,
 											"top": 509,
-											"width": 59.591796875,
+											"width": 59.864990234375,
 											"height": 13,
 											"alpha": -3.646782953859562,
 											"distance": 58.309518948453004,
@@ -14309,7 +14298,7 @@
 													"font": "Arial;13;0",
 													"left": -1744,
 													"top": 54,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -14452,7 +14441,7 @@
 											"font": "Arial;13;0",
 											"left": 240,
 											"top": 618,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": -4.247804807768168,
 											"distance": 27.018512172212592,
@@ -14580,7 +14569,7 @@
 													"font": "Arial;13;0",
 													"left": -1449.83984375,
 													"top": 64,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -14723,7 +14712,7 @@
 											"font": "Arial;13;0",
 											"left": 328,
 											"top": 632,
-											"width": 33.591796875,
+											"width": 33.864990234375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -14880,7 +14869,7 @@
 													"font": "Arial;13;0",
 													"left": -1152,
 													"top": 48,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -15023,7 +15012,7 @@
 											"font": "Arial;13;0",
 											"left": 789,
 											"top": 625,
-											"width": 98.591796875,
+											"width": 98.864990234375,
 											"height": 13,
 											"alpha": -1.4392522221613044,
 											"distance": 17.4928556845359,
@@ -15151,7 +15140,7 @@
 													"font": "Arial;13;0",
 													"left": -1017.83984375,
 													"top": 38,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -15294,7 +15283,7 @@
 											"font": "Arial;13;0",
 											"left": 911,
 											"top": 631,
-											"width": 98.591796875,
+											"width": 98.864990234375,
 											"height": 13,
 											"alpha": 3.939430134974702,
 											"distance": 75.50496672405067,
@@ -15451,7 +15440,7 @@
 													"font": "Arial;13;0",
 													"left": -2464,
 													"top": 246,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -15472,7 +15461,7 @@
 											"font": "Arial;13;0",
 											"left": 488,
 											"top": 632,
-											"width": 62.4951171875,
+											"width": 62.57194519042969,
 											"height": 25,
 											"stereotypeLabel": {
 												"$ref": "AAAAAAFl3CQGEo11PBc="
@@ -15594,7 +15583,7 @@
 											"font": "Arial;13;0",
 											"left": 468,
 											"top": 608,
-											"width": 98.591796875,
+											"width": 98.864990234375,
 											"height": 13,
 											"alpha": -3.6632796500542213,
 											"distance": 39.96248240537617,
@@ -15722,7 +15711,7 @@
 													"font": "Arial;13;0",
 													"left": -2313.83984375,
 													"top": 246,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 建造者模式)"
 												},
@@ -15865,7 +15854,7 @@
 											"font": "Arial;13;0",
 											"left": 613,
 											"top": 616,
-											"width": 98.591796875,
+											"width": 98.864990234375,
 											"height": 13,
 											"alpha": 3.673433190467285,
 											"distance": 46.22769732530488,
@@ -16023,7 +16012,7 @@
 											"font": "Arial;13;0",
 											"left": 568,
 											"top": 332,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 0.5235987755982988,
 											"distance": 30,
@@ -16234,7 +16223,7 @@
 											"font": "Arial;13;0",
 											"left": 398,
 											"top": 86,
-											"width": 34.32177734375,
+											"width": 35.13896179199219,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -16569,9 +16558,9 @@
 												"$ref": "AAAAAAFl3CZ7746Co/E="
 											},
 											"font": "Arial;13;0",
-											"left": 583,
+											"left": 582,
 											"top": 176,
-											"width": 41.55810546875,
+											"width": 43.328948974609375,
 											"height": 13,
 											"alpha": 0.9259813795473307,
 											"distance": 38.8329756778952,
@@ -16782,7 +16771,7 @@
 											"font": "Arial;13;0",
 											"left": 410,
 											"top": 594,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -17056,7 +17045,7 @@
 											"font": "Arial;13;0",
 											"left": 728,
 											"top": 600,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 4.302260158277593,
 											"distance": 7,
@@ -17333,8 +17322,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl3BOPJ4g23wA="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -17382,8 +17370,7 @@
 										"name": "builds",
 										"reference": {
 											"$ref": "AAAAAAFl3BRGJYhn6N0="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -17461,8 +17448,7 @@
 										"name": "uses",
 										"reference": {
 											"$ref": "AAAAAAFl3BdR/YivLAA="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -17673,8 +17659,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl3B1gSIl90B0="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -17726,8 +17711,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl3B16uom3DcQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -17970,7 +17954,7 @@
 													"font": "Arial;13;0",
 													"left": 912,
 													"top": 560,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 代理模式)"
 												},
@@ -18166,7 +18150,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 代理模式)"
 												},
@@ -18351,7 +18335,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 代理模式)"
 												},
@@ -18572,7 +18556,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 代理模式)"
 												},
@@ -18969,7 +18953,7 @@
 											"font": "Arial;13;0",
 											"left": 537,
 											"top": 330,
-											"width": 34.32177734375,
+											"width": 35.13896179199219,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -19470,7 +19454,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 享元模式)"
 												},
@@ -19601,7 +19585,7 @@
 											"font": "Arial;13;0",
 											"left": 736,
 											"top": 107,
-											"width": 165.7080078125,
+											"width": 171.8238525390625,
 											"height": 68
 										},
 										{
@@ -19706,7 +19690,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 享元模式)"
 												},
@@ -19913,7 +19897,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 享元模式)"
 												},
@@ -20098,7 +20082,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 享元模式)"
 												},
@@ -20484,9 +20468,9 @@
 												"$ref": "AAAAAAFmOLxodUhdB0U="
 											},
 											"font": "Arial;13;0",
-											"left": 521,
+											"left": 519,
 											"top": 233,
-											"width": 43.72265625,
+											"width": 46.032958984375,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -20817,9 +20801,9 @@
 												"$ref": "AAAAAAFmOLyp7Eif5qM="
 											},
 											"font": "Arial;13;0",
-											"left": 823,
+											"left": 822,
 											"top": 195,
-											"width": 27.82177734375,
+											"width": 28.573974609375,
 											"height": 13,
 											"alpha": 0.5235987755982988,
 											"distance": 30,
@@ -21029,8 +21013,7 @@
 										"name": "ask",
 										"reference": {
 											"$ref": "AAAAAAFmOLfPVUcZcLE="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -21135,8 +21118,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOLlDukdwzv8="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -21382,7 +21364,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"top": -16,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -21575,7 +21557,7 @@
 													"font": "Arial;13;0",
 													"left": -128,
 													"top": 16,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -21589,8 +21571,8 @@
 													"font": "Arial;13;0",
 													"left": -128,
 													"top": 16,
-													"height": 13,
-													"horizontalAlignment": 1
+													"horizontalAlignment": 1,
+													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
@@ -21642,7 +21624,7 @@
 											"font": "Arial;13;0",
 											"left": 312,
 											"top": 289,
-											"width": 152,
+											"width": 156.48387145996094,
 											"height": 23
 										},
 										{
@@ -21817,8 +21799,8 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"height": 13,
-													"horizontalAlignment": 1
+													"horizontalAlignment": 1,
+													"wordWrap": true
 												}
 											],
 											"font": "Arial;13;0",
@@ -21990,9 +21972,9 @@
 												"$ref": "AAAAAAFl4f9S/pDmZIM="
 											},
 											"font": "Arial;13;0",
-											"left": 423,
+											"left": 422,
 											"top": 239,
-											"width": 74.05810546875,
+											"width": 76.97291564941406,
 											"height": 13,
 											"alpha": -2.087852074727445,
 											"distance": 54.405882034941776,
@@ -22074,7 +22056,7 @@
 									"font": "Arial;13;0",
 									"left": 64,
 									"top": 408,
-									"width": 408.654296875,
+									"width": 415.3038024902344,
 									"height": 50,
 									"text": "AudioPlayer本身支持mp3，现扩展adapter，使其支持mp4、vlc播放"
 								},
@@ -22092,7 +22074,7 @@
 										"$ref": "AAAAAAFl4frFlpAbaxI="
 									},
 									"lineStyle": 1,
-									"points": "349:345;290:407"
+									"points": "350:345;294:407"
 								},
 								{
 									"_type": "UMLClassView",
@@ -22145,7 +22127,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -22261,7 +22243,7 @@
 											"font": "Arial;13;0",
 											"left": 473,
 											"top": 312,
-											"width": 195.3515625,
+											"width": 203.309814453125,
 											"height": 38
 										},
 										{
@@ -22339,7 +22321,7 @@
 											"font": "Arial;13;0",
 											"left": 547,
 											"top": 205,
-											"width": 59.591796875,
+											"width": 59.864990234375,
 											"height": 13,
 											"alpha": 4.1395430526198815,
 											"distance": 59.22837157984339,
@@ -22468,7 +22450,7 @@
 													"font": "Arial;13;0",
 													"left": 16,
 													"top": 448,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -22682,7 +22664,7 @@
 													"font": "Arial;13;0",
 													"left": -96,
 													"top": 480,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -22988,7 +22970,7 @@
 													"font": "Arial;13;0",
 													"left": 118.16015625,
 													"top": 480,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 适配器模式)"
 												},
@@ -23261,7 +23243,7 @@
 											"font": "Arial;13;0",
 											"left": 716,
 											"top": 290,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -23802,8 +23784,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4fpLY4/oYrk="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -23931,8 +23912,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4gCoj5EEkDQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -24194,7 +24174,7 @@
 													"font": "Arial;13;0",
 													"left": -16,
 													"top": -16,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -24387,7 +24367,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -24676,7 +24656,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -24861,7 +24841,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -25046,7 +25026,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -25215,7 +25195,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 外观模式)"
 												},
@@ -26240,8 +26220,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOMWH+kouUxY="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -26505,7 +26484,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 组合模式)"
 												},
@@ -26690,7 +26669,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 组合模式)"
 												},
@@ -26984,7 +26963,7 @@
 											"font": "Arial;13;0",
 											"left": 383,
 											"top": 151,
-											"width": 34.32177734375,
+											"width": 35.13896179199219,
 											"height": 13,
 											"alpha": -1.6713883718633953,
 											"distance": 29.068883707497267,
@@ -27315,9 +27294,9 @@
 												"$ref": "AAAAAAFl4krU6pzC5eM="
 											},
 											"font": "Arial;13;0",
-											"left": 598,
+											"left": 597,
 											"top": 207,
-											"width": 88.47998046875,
+											"width": 90.42794799804688,
 											"height": 13,
 											"alpha": -1.522755920062718,
 											"distance": 208.24024587000469,
@@ -27527,8 +27506,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4kYD05q/GHs="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -27575,8 +27553,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4kZWUpryyvo="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -27604,7 +27581,6 @@
 										"reference": {
 											"$ref": "AAAAAAFl4kZWUpryyvo="
 										},
-										"navigable": false,
 										"aggregation": "shared"
 									},
 									"end2": {
@@ -27634,7 +27610,6 @@
 										"reference": {
 											"$ref": "AAAAAAFl4kZWUpryyvo="
 										},
-										"navigable": false,
 										"multiplicity": "1..*"
 									},
 									"end2": {
@@ -27827,7 +27802,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -28015,7 +27990,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -28200,7 +28175,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -28385,7 +28360,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -28758,7 +28733,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -29248,7 +29223,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 装饰器模式)"
 												},
@@ -29551,7 +29526,7 @@
 											"font": "Arial;13;0",
 											"left": 721,
 											"top": 231,
-											"width": 34.32177734375,
+											"width": 35.13896179199219,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -30135,7 +30110,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 过滤器模式)"
 												},
@@ -30324,7 +30299,7 @@
 													"font": "Arial;13;0",
 													"left": -240,
 													"top": 32,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 过滤器模式)"
 												},
@@ -30622,7 +30597,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 过滤器模式)"
 												},
@@ -30701,7 +30676,7 @@
 											"font": "Arial;13;0",
 											"left": 272,
 											"top": 134,
-											"width": 176,
+											"width": 179.58482360839844,
 											"height": 23
 										},
 										{
@@ -30807,7 +30782,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 过滤器模式)"
 												},
@@ -31028,7 +31003,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 过滤器模式)"
 												},
@@ -31144,7 +31119,7 @@
 											"font": "Arial;13;0",
 											"left": 296,
 											"top": 351,
-											"width": 176,
+											"width": 179.58482360839844,
 											"height": 23
 										},
 										{
@@ -31408,7 +31383,7 @@
 											"font": "Arial;13;0",
 											"left": 570,
 											"top": 141,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -31678,7 +31653,7 @@
 											"font": "Arial;13;0",
 											"left": 815,
 											"top": 217,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5886513934199442,
 											"distance": 28,
@@ -31951,8 +31926,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOO7inlE+ayg="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -31980,8 +31954,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOO7inlE+ayg="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -32351,7 +32324,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -32541,7 +32514,7 @@
 													"font": "Arial;13;0",
 													"left": 752,
 													"top": -208,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -32692,7 +32665,7 @@
 									"font": "Arial;13;0",
 									"left": 815.57080078125,
 									"top": 72,
-									"width": 270.65625,
+									"width": 272.0439453125,
 									"height": 50,
 									"text": "桥接模式中，作为Shape与Color的桥梁作用"
 								},
@@ -32767,7 +32740,7 @@
 													"font": "Arial;13;0",
 													"left": -112,
 													"top": -4,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -33056,7 +33029,7 @@
 													"font": "Arial;13;0",
 													"left": 54.16015625,
 													"top": 12,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -33341,7 +33314,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -33562,7 +33535,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 桥接模式)"
 												},
@@ -33659,7 +33632,7 @@
 											"font": "Arial;13;0",
 											"left": 368,
 											"top": 256,
-											"width": 117.3134765625,
+											"width": 118.96591186523438,
 											"height": 38
 										},
 										{
@@ -33829,7 +33802,7 @@
 											"font": "Arial;13;0",
 											"left": 266,
 											"top": 78,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -34099,7 +34072,7 @@
 											"font": "Arial;13;0",
 											"left": 570,
 											"top": 81,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 1.5707963267948966,
 											"distance": 15,
@@ -34369,7 +34342,7 @@
 											"font": "Arial;13;0",
 											"left": 584,
 											"top": 331,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 0.06901463890499836,
 											"distance": 217.51781536232843,
@@ -34639,7 +34612,7 @@
 											"font": "Arial;13;0",
 											"left": 744,
 											"top": 320,
-											"width": 35.0517578125,
+											"width": 35.489959716796875,
 											"height": 13,
 											"alpha": 0.08504030442154202,
 											"distance": 306.1061907247222,
@@ -34912,8 +34885,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4ive05YbC/4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -34941,8 +34913,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4ive05YbC/4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -34970,8 +34941,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4ive05YbC/4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -35103,8 +35073,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFl4jEIfpc6/KM="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -35298,7 +35267,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -35483,7 +35452,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -35687,7 +35656,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -35891,7 +35860,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -36095,7 +36064,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -36585,7 +36554,7 @@
 													"font": "Arial;13;0",
 													"left": 16,
 													"top": 16,
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 观察者模式)"
 												},
@@ -36669,7 +36638,7 @@
 											"font": "Arial;13;0",
 											"left": 728,
 											"top": 297,
-											"width": 176,
+											"width": 176.39981079101562,
 											"height": 38
 										},
 										{
@@ -37285,8 +37254,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmORpSylYPHkI="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -37440,7 +37408,7 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": 64,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 模版模式)"
 												},
@@ -37628,7 +37596,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 模版模式)"
 												},
@@ -37864,7 +37832,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 模版模式)"
 												},
@@ -38104,7 +38072,7 @@
 													"font": "Arial;13;0",
 													"left": -16,
 													"top": 32,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 模版模式)"
 												},
@@ -39028,7 +38996,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 责任链模式)"
 												},
@@ -39213,7 +39181,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 责任链模式)"
 												},
@@ -39519,7 +39487,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 责任链模式)"
 												},
@@ -39755,7 +39723,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 责任链模式)"
 												},
@@ -39991,7 +39959,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 责任链模式)"
 												},
@@ -40753,8 +40721,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOSaOQ1k5CLA="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -41102,7 +41069,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 备忘录模式)"
 												},
@@ -41287,7 +41254,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 备忘录模式)"
 												},
@@ -41437,7 +41404,7 @@
 											"font": "Arial;13;0",
 											"left": 288,
 											"top": 136,
-											"width": 213.39794921875,
+											"width": 222.21180725097656,
 											"height": 68
 										},
 										{
@@ -41542,7 +41509,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 备忘录模式)"
 												},
@@ -41763,7 +41730,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 备忘录模式)"
 												},
@@ -42667,8 +42634,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOTGwSFyoAV0="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -42796,7 +42762,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 空对象模式)"
 												},
@@ -42981,7 +42947,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 空对象模式)"
 												},
@@ -43061,7 +43027,7 @@
 											"font": "Arial;13;0",
 											"left": 776,
 											"top": 243,
-											"width": 211.92529296875,
+											"width": 222.10777282714844,
 											"height": 23
 										},
 										{
@@ -43166,7 +43132,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 空对象模式)"
 												},
@@ -43387,7 +43353,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 空对象模式)"
 												},
@@ -43625,7 +43591,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 空对象模式)"
 												},
@@ -44562,8 +44528,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOTQuq16+oSE="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -44610,8 +44575,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOTSkM18EOg4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -44940,7 +44904,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -45125,7 +45089,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -45363,7 +45327,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -45587,7 +45551,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -45772,7 +45736,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -45993,7 +45957,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 命令模式)"
 												},
@@ -47182,8 +47146,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOUn/cMp2T/s="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -47210,8 +47173,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOUn/cMp2T/s="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -47305,8 +47267,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOUvxWMsDxIY="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -47567,7 +47528,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 中介者模式)"
 												},
@@ -47752,7 +47713,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 中介者模式)"
 												},
@@ -48007,7 +47968,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 中介者模式)"
 												},
@@ -48703,8 +48664,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOVFSh836At4="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -48912,7 +48872,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 解释器模式)"
 												},
@@ -49026,7 +48986,7 @@
 											"font": "Arial;13;0",
 											"left": 128,
 											"top": 115,
-											"width": 197.24951171875,
+											"width": 203.5438232421875,
 											"height": 53
 										},
 										{
@@ -49134,7 +49094,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 解释器模式)"
 												},
@@ -49319,7 +49279,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 解释器模式)"
 												},
@@ -49435,7 +49395,7 @@
 											"font": "Arial;13;0",
 											"left": 120,
 											"top": 472,
-											"width": 139.6826171875,
+											"width": 144.380859375,
 											"height": 38
 										},
 										{
@@ -49540,7 +49500,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 解释器模式)"
 												},
@@ -50208,8 +50168,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOVZkM9BDbIA="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -50491,7 +50450,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -50679,7 +50638,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -50915,7 +50874,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -51154,7 +51113,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -51339,7 +51298,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -51560,7 +51519,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -51745,7 +51704,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -51930,7 +51889,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 访问者模式)"
 												},
@@ -53096,8 +53055,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOVxW8dJ6hiM="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -53124,8 +53082,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOVxW8dJ6hiM="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -53578,7 +53535,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 策略模式)"
 												},
@@ -53763,7 +53720,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 策略模式)"
 												},
@@ -53970,7 +53927,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 策略模式)"
 												},
@@ -54155,7 +54112,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 策略模式)"
 												},
@@ -54340,7 +54297,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 策略模式)"
 												},
@@ -55224,8 +55181,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOWW8A9Y8Hfs="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -55272,8 +55228,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOWYhbdZ4gLM="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -55508,7 +55463,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 迭代器模式)"
 												},
@@ -55696,7 +55651,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 迭代器模式)"
 												},
@@ -55776,7 +55731,7 @@
 											"font": "Arial;13;0",
 											"left": 304,
 											"top": 160,
-											"width": 133.91259765625,
+											"width": 141.59886169433594,
 											"height": 23
 										},
 										{
@@ -55881,7 +55836,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 迭代器模式)"
 												},
@@ -56088,7 +56043,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 迭代器模式)"
 												},
@@ -56290,7 +56245,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 103.27001953125,
+													"width": 106.31396484375,
 													"height": 13,
 													"text": "(from 迭代器模式)"
 												},
@@ -57191,8 +57146,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOWqAxdjZCPQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -57268,8 +57222,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOWtqBNlTmpM="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
@@ -57511,7 +57464,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 状态模式)"
 												},
@@ -57696,7 +57649,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 状态模式)"
 												},
@@ -57937,7 +57890,7 @@
 													},
 													"visible": false,
 													"font": "Arial;13;0",
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 状态模式)"
 												},
@@ -58126,7 +58079,7 @@
 													"font": "Arial;13;0",
 													"left": 48,
 													"top": 48,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 状态模式)"
 												},
@@ -58302,7 +58255,7 @@
 													"font": "Arial;13;0",
 													"left": 288,
 													"top": 38,
-													"width": 90.27001953125,
+													"width": 93.31396484375,
 													"height": 13,
 													"text": "(from 状态模式)"
 												},
@@ -58941,8 +58894,7 @@
 										},
 										"reference": {
 											"$ref": "AAAAAAFmOW7DB9vkVvQ="
-										},
-										"navigable": false
+										}
 									},
 									"end2": {
 										"_type": "UMLAssociationEnd",
