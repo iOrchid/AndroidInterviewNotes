@@ -2,70 +2,89 @@
 
 > 常用MacOS软件搜集，便捷你的工作
 
-| 软件名称                                 | 用途                                                         |
-| ---------------------------------------- | ------------------------------------------------------------ |
-| Home Brew                                | 用于shell内管理软件的工具                                    |
-| Chrome/Firefox/Opera                     | 浏览器                                                       |
-| 迅雷/FreeDownloadManger/Flox/Downie/IDM  | 下载工具                                                     |
-| ResilioSync/Syncthing                    | p2p的文件同步工具，可用作私有云盘搭建                        |
-| JumpDesktop/Screen4/RemoteDesktopManager | 电脑远程工具                                                 |
-| Ipscanner                                | 局域网ip查看工具                                             |
-| LittleSnich/Hands On                     | 联网控制防火墙                                               |
-| CleanMyMac/MacBooster                    | 系统优化工具                                                 |
-| Dr.Antivirus/Antivirus one               | 趋势安全软件（有和谐版，所以收录，另avast/kaspersky也很好）  |
-| Foldery/FolderDesigner                   | 文件夹美化工具，可以更改颜色或图标                           |
-| Archiver                                 | 解压缩工具                                                   |
-| CheatSheet                               | 查看当前软件的快捷键配置的工具                               |
-| Bartender                                | 管理状态栏图标的工具                                         |
-| Alfred4                                  | 快速搜索工具                                                 |
-| TG pro                                   | 系统硬件温度检测工具                                         |
-| command one                              | 增强的文件管理器，可替换finder                               |
-| one Switch                               | 电脑便捷开关                                                 |
-| TuxeraDiskManager/NTFS for Mac           | 用于读取移动硬盘的管理工具                                   |
-| KeyCastr                                 | 用于显示当前键盘输入到屏幕上，提示作用。可用于录制视屏时候，快捷键操作的屏幕显示 |
-| MultiTouch                               | 触控板的增强工具，管理手势操作                               |
-| Typora                                   | markdown工具，真心推荐                                       |
-| 欧路词典/金山词典/有道词典               | 英文翻译工具                                                 |
-| Wps/Office                               | 文档office工具                                               |
-| Xmind zen                                | 思维导图工具                                                 |
-| OmniGraffle                              | 图形绘制工具                                                 |
-| 印象笔记                                 | 笔记记录工具                                                 |
-| Dash                                     | api文档管理                                                  |
-| postman                                  | api调试工具                                                  |
-| Charles/Debookee                         | 接口抓包工具                                                 |
-| StarUML                                  | UML工具                                                      |
-| Monodraw                                 | 简约好用的流程图工具                                         |
-| Obsidian                                 | 知识笔记图谱工具                                             |
-|                                          |                                                              |
-| iTerms                                   | 终端工具                                                     |
-| BeyondCompare                            | 文件对比工具                                                 |
-| Navicat                                  | 数据库管理工具                                               |
-| Expressions                              | 正则表达式检测工具                                           |
-| pxcook                                   | 像素大厨，查看设计稿用                                       |
-| PS/Sketch/Gifox/Pixelmator               | 图形图像工具                                                 |
-| Photomate/PhotoSweeper X                 | 相册管理工具                                                 |
-| screenflow                               | 录屏工具                                                     |
-| A Better Finder Rename                   | 批量重命名工具                                               |
-| Applocker                                | 应用锁                                                       |
-| Gemini2                                  | 重复文件查找工具                                             |
-| Qsapce                                   | 多文件窗口工具                                               |
-| QtScrcpy                                 | Android控制工具                                              |
-| TinyCal                                  | 简约清爽的日历工具                                           |
-| PPet                                     | 无聊时解乏的小桌宠                                           |
-| platelet                                 | 无聊时解乏的小桌宠，血小板                                   |
-| Pock                                     | TouchBar的增强工具                                           |
-| Qbserve                                  | Mac使用时间统计工具，分类统计                                |
-| Timey 3                                  | 简单倒计时工具                                               |
-| MacDroid/HandShaker                      | Mac链接Android的工具                                         |
-| flux                                     | 屏幕自动色温调节                                             |
-| iMazing                                  | iPhone手机管理工具                                           |
-| colorful folders                         | 文件夹美化工具                                               |
-| Sublime/Vscode                           | 编辑器工具                                                   |
-| Axure                                    | 原型图工具                                                   |
-| xnip                                     | 小巧好用的截图工具                                           |
-| Snipaste                                 | 截图工具                                                     |
-| Sip                                      | 取色板                                                       |
-| Utools/He3                               | 开发辅助相关工具集                                           |
+| 软件名称                                          | 用途                                                         |
+| ------------------------------------------------- | ------------------------------------------------------------ |
+| Archiver/My zip pro                               | 解压缩工具                                                   |
+| Alfred4                                           | 快速搜索工具                                                 |
+| A Better Finder Rename                            | 批量重命名工具                                               |
+| Axure                                             | 原型图工具                                                   |
+| Applocker                                         | 应用锁                                                       |
+| AnyGo                                             | iOS手机模拟定位                                              |
+| BeyondCompare/KaleidoScope                        | 文件对比工具                                                 |
+| BeFocused Pro                                     | 番茄工作法工具                                               |
+| Bartender                                         | 管理状态栏图标的工具                                         |
+| CodeRunner                                        | 代码编辑运行工具                                             |
+| Chrome/Firefox/Opera                              | 浏览器                                                       |
+| CleanMyMac/MacBooster/App Cleaner                 | 系统优化工具                                                 |
+| CheatSheet                                        | 查看当前软件的快捷键配置的工具                               |
+| Colorful folders                                  | 文件夹美化工具                                               |
+| Command one/Total Finder                          | 增强的文件管理器，可替换finder                               |
+| Charles/Debookee                                  | 接口抓包工具                                                 |
+| Dr.Antivirus/Antivirus one                        | 趋势安全软件（有和谐版，所以收录，另avast/kaspersky也很好）  |
+| Dash                                              | api文档管理                                                  |
+| Expressions                                       | 正则表达式检测工具                                           |
+| Easy new file                                     | 右键增强工具                                                 |
+| Foldery/FolderDesigner                            | 文件夹美化工具，可以更改颜色或图标                           |
+| flux                                              | 屏幕自动色温调节                                             |
+| Find Any file                                     | 快速文件查找工具                                             |
+| Gemini2                                           | 重复文件查找工具                                             |
+| Home Brew                                         | 用于shell内管理软件的工具                                    |
+| Ipscanner                                         | 局域网ip查看工具                                             |
+| iTerms                                            | 终端工具                                                     |
+| iMazing                                           | iPhone手机管理工具                                           |
+| IDA Pro                                           | 反编译工具                                                   |
+| Imagine                                           | tiny的图片压缩工具                                           |
+| JumpDesktop/Screen4/RemoteDesktopManager          | 电脑远程工具                                                 |
+| KeyCastr                                          | 用于显示当前键盘输入到屏幕上，提示作用。可用于录制视屏时候，快捷键操作的屏幕显示 |
+| LittleSnich/Hands On/LULU                         | 联网控制防火墙                                               |
+| life Moment /Moment                               | 倒数日工具                                                   |
+| Monodraw                                          | 简约好用的流程图工具                                         |
+| MultiTouch迅雷/FreeDownloadManger/Flox/Downie/IDM | 触控板的增强工具，管理手势操作下载工具                       |
+| MacDroid/HandShaker                               | Mac链接Android的工具                                         |
+| Magnet                                            | 多窗口管理工具                                               |
+| Navicat                                           | 数据库管理工具                                               |
+| Noizio/禅音                                       | 白噪音工具                                                   |
+| networker                                         | 菜单栏网速工具                                               |
+| Obsidian                                          | 知识笔记图谱工具                                             |
+| one Switch/only switch                            | 电脑便捷开关                                                 |
+| OmniGraffle                                       | 图形绘制工具                                                 |
+| postman / ApiPost / PAW                           | api调试工具                                                  |
+| Project Office                                    | 项目管理工具                                                 |
+| pxcook                                            | 像素大厨，查看设计稿用                                       |
+| PS/Sketch/Gifox/Pixelmator                        | 图形图像工具                                                 |
+| Photomate/PhotoSweeper X                          | 相册管理工具                                                 |
+| PPet                                              | 无聊时解乏的小桌宠                                           |
+| platelet                                          | 无聊时解乏的小桌宠，血小板                                   |
+| Pock                                              | TouchBar的增强工具                                           |
+| Parallel Desktop/Vmware                           | 虚拟机工具                                                   |
+| Penguin                                           | plist编辑工具                                                |
+| Qsapce                                            | 多文件窗口工具                                               |
+| QtScrcpy                                          | Android控制工具                                              |
+| Qbserve /Timemator                                | Mac使用时间统计工具，分类统计                                |
+| ResilioSync/Syncthing                             | p2p的文件同步工具，可用作私有云盘搭建                        |
+| screenflow                                        | 录屏工具                                                     |
+| slidepad                                          | 侧滑式编辑搜索工具                                           |
+| Sublime/Vscode                                    | 编辑器工具                                                   |
+| StarUML                                           | UML工具                                                      |
+| Snipaste                                          | 截图工具                                                     |
+| Sip / ColorWell /Color Snapper/pikka              | 取色板                                                       |
+| SyncTime                                          | 磁盘同步工具                                                 |
+| TuxeraDiskManager/NTFS for Mac/NTFS助手           | 用于读取移动硬盘的管理工具                                   |
+| Typora                                            | markdown工具，真心推荐                                       |
+| TG pro                                            | 系统硬件温度检测工具                                         |
+| TinyCal / Dato                                    | 简约清爽的日历工具                                           |
+| Timey 3 / today                                   | 简单倒计时工具                                               |
+| Theine / Lungo                                    | 系统防止休眠工具                                             |
+| Termius                                           | 云服务器终端管理工具                                         |
+| Utools/He3                                        | 开发辅助相关工具集                                           |
+| Waifu2x                                           | 图片像素提高工具                                             |
+| Wps/Office                                        | 文档office工具                                               |
+| Xmind zen                                         | 思维导图工具                                                 |
+| xnip                                              | 小巧好用的截图工具                                           |
+| 1Password                                         | 密码管理工具                                                 |
+| 印象笔记                                          | 笔记记录工具                                                 |
+| 欧路词典/金山词典/有道词典                        | 英文翻译工具                                                 |
+
 
 > **另：在最新的MacOS Catalina之后，好多破解软件会提示损坏，或者无法打开之类的问题**，可以使用下面三条命令基本解决问题
 >
