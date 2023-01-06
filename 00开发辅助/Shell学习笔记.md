@@ -73,7 +73,7 @@ for file in 'ls /etc'
 ```shell
 your_variable='yourname'
 echo $your_variable
-echo $(your_variable)
+echo ${your_variable}
 ```
 
 变量名可以加`{}`来标识变量名的范围，如：

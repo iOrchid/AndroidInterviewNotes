@@ -10,6 +10,7 @@
 | Axure                                             | 原型图工具                                                   |
 | Applocker                                         | 应用锁                                                       |
 | AnyGo                                             | iOS手机模拟定位                                              |
+| Apifox / postman / ApiPost / PAW                  | api调试工具                                                  |
 | BeyondCompare/KaleidoScope                        | 文件对比工具                                                 |
 | BeFocused Pro                                     | 番茄工作法工具                                               |
 | Bartender                                         | 管理状态栏图标的工具                                         |
@@ -17,7 +18,7 @@
 | Chrome/Firefox/Opera                              | 浏览器                                                       |
 | CleanMyMac/MacBooster/App Cleaner                 | 系统优化工具                                                 |
 | CheatSheet                                        | 查看当前软件的快捷键配置的工具                               |
-| Colorful folders                                  | 文件夹美化工具                                               |
+| Colorful folders / colorfolder                    | 文件夹美化工具                                               |
 | Command one/Total Finder                          | 增强的文件管理器，可替换finder                               |
 | Charles/Debookee                                  | 接口抓包工具                                                 |
 | Dr.Antivirus/Antivirus one                        | 趋势安全软件（有和谐版，所以收录，另avast/kaspersky也很好）  |
@@ -27,8 +28,10 @@
 | Foldery/FolderDesigner                            | 文件夹美化工具，可以更改颜色或图标                           |
 | flux                                              | 屏幕自动色温调节                                             |
 | Find Any file                                     | 快速文件查找工具                                             |
+| FastDev                                           | 开源的配置github加速的代理工具                               |
 | Gemini2                                           | 重复文件查找工具                                             |
 | Home Brew                                         | 用于shell内管理软件的工具                                    |
+| Haptickey                                         | Touchbar增加触感                                             |
 | Ipscanner                                         | 局域网ip查看工具                                             |
 | iTerms                                            | 终端工具                                                     |
 | iMazing                                           | iPhone手机管理工具                                           |
@@ -38,6 +41,7 @@
 | KeyCastr                                          | 用于显示当前键盘输入到屏幕上，提示作用。可用于录制视屏时候，快捷键操作的屏幕显示 |
 | LittleSnich/Hands On/LULU                         | 联网控制防火墙                                               |
 | life Moment /Moment                               | 倒数日工具                                                   |
+| LinkLiar                                          | 针对网络wifi，使用随机mac地址                                |
 | Monodraw                                          | 简约好用的流程图工具                                         |
 | MultiTouch迅雷/FreeDownloadManger/Flox/Downie/IDM | 触控板的增强工具，管理手势操作下载工具                       |
 | MacDroid/HandShaker                               | Mac链接Android的工具                                         |
@@ -48,7 +52,6 @@
 | Obsidian                                          | 知识笔记图谱工具                                             |
 | one Switch/only switch                            | 电脑便捷开关                                                 |
 | OmniGraffle                                       | 图形绘制工具                                                 |
-| postman / ApiPost / PAW                           | api调试工具                                                  |
 | Project Office                                    | 项目管理工具                                                 |
 | pxcook                                            | 像素大厨，查看设计稿用                                       |
 | PS/Sketch/Gifox/Pixelmator                        | 图形图像工具                                                 |
@@ -69,6 +72,8 @@
 | Snipaste                                          | 截图工具                                                     |
 | Sip / ColorWell /Color Snapper/pikka              | 取色板                                                       |
 | SyncTime                                          | 磁盘同步工具                                                 |
+| SnippetsLab                                       | 代码碎片搜集本                                               |
+| SwitchHosts                                       | hosts文件切换工具                                            |
 | TuxeraDiskManager/NTFS for Mac/NTFS助手           | 用于读取移动硬盘的管理工具                                   |
 | Typora                                            | markdown工具，真心推荐                                       |
 | TG pro                                            | 系统硬件温度检测工具                                         |
