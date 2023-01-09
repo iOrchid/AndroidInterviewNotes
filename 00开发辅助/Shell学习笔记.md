@@ -1,4 +1,5 @@
 # Shell学习笔记
+
 [toc]
 
 ## 简介：
@@ -187,6 +188,23 @@ shell常用`number`和`string`，其中`string`可以单引号、双引号或者
   str="hello world nihaome"
   #查找字符i或s的位置,反引号
   echo `expr index "$str" is`
+  ```
+  
+- 字符串匹配
+
+  - 从左侧开始匹配
+    - `#`表示最小限度开始匹配
+    - `##`最大限度的匹配
+  - 从右侧开始匹配
+    - `%`最小限度
+    - `%%`最大限度
+  
+  ```shell
+  # 匹配到“”中间的字符
+  name=rootproject.name = "shellScript"
+  #想要获取shellScript这个字符
+  echo ${${name#*\"}%\"}
+  # 这里是用的都是最小匹配，如果是## 或 %% 就匹配不到，因为## 会找到最后一个“之后
   ```
 
 ### 6、Shell数组
@@ -568,7 +586,7 @@ echo Hello World
   read name
   echo "$name It is a test"
 
-  #运行效果：
+  #运行效果：如果 read -s 参数，则表示控制台不显示输入过程，隐藏输入的值
   [root@www ~]# sh test.sh
   OK                     #标准输入
   OK It is a test        #输出
@@ -704,7 +722,7 @@ printf "%s and %d \n"
 | \d     dd        | 表示1--3位的八进制字符，仅在格式字符串中有效。               |
 | \0     dd      d | 表示1--3位的八进制字符                                       |
 
-## Shell text命令
+## Shell test命令
 
 shell中test命令用于测试条件是否成立，可进行数字、字符和文件的条件测试
 
