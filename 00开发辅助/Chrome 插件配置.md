@@ -9,6 +9,7 @@
 | anonymoX                                  | Easy anonymous web browsing                                  |
 | Axure RP Extension for Chrome             | An extension that allows local viewing of Axure RP prototypes from Google Chrome. |
 | Block Site - Chrome™                      | 保持专注，提高工作效率。轻松拦截任何令人分心或有害的网站。彻底杜绝耽误时间！ |
+| Bookmarks Checker                         | 检测收藏网址的重复和可用性，可便捷删除                       |
 | Charset                                   | 修改网站的默认编码                                           |
 | ColorPick Eyedropper                      | A zoomed eyedropper & color chooser tool that allows you to select color values from webpages and more. |
 | crxMouse Chrome™ 手势                     | 原名:Gestures for Chrome(TM)汉化版.方便,快捷,充分发掘鼠标的所有操作.功能包括:鼠标手势,超级拖曳,滚轮手势,摇杆手势,平滑滚动,标签页列表等. |

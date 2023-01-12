@@ -34,6 +34,7 @@
 | Haptickey                                         | Touchbar增加触感                                             |
 | Ipscanner                                         | 局域网ip查看工具                                             |
 | iTerms                                            | 终端工具                                                     |
+| integrity                                         | 网址死链接检测工具（可以用来清理浏览器书签）                 |
 | iMazing                                           | iPhone手机管理工具                                           |
 | IDA Pro                                           | 反编译工具                                                   |
 | Imagine                                           | tiny的图片压缩工具                                           |
@@ -61,6 +62,7 @@
 | Pock                                              | TouchBar的增强工具                                           |
 | Parallel Desktop/Vmware                           | 虚拟机工具                                                   |
 | Penguin                                           | plist编辑工具                                                |
+| Paste/PopClip                                     | 剪切板管理工具                                               |
 | Qsapce                                            | 多文件窗口工具                                               |
 | QtScrcpy                                          | Android控制工具                                              |
 | Qbserve /Timemator                                | Mac使用时间统计工具，分类统计                                |
