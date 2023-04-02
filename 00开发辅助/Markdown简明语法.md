@@ -141,8 +141,8 @@ $$x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 
 ```mermaid
 sequenceDiagram
-A->>B:Hello ,Nice to meet you .//A said to B
-note right of B:Who is this ? //Thinking...
+A->>B:Hello ,Nice to meet you .# A said to B
+note right of B:Who is this ? # Thinking...
 B-->>A:Oh...
 ```
 

@@ -56,6 +56,7 @@
 - [ ] [leetcode100](https://github.com/mJackie/leetcode)
 - [ ] [leetcode azl](https://github.com/azl397985856/leetcode)
 - [ ] [leetcode mater](https://github.com/youngyangyang04/leetcode-master)
+- [ ] [hello-algo](https://github.com/krahets/hello-algo)
 - [ ] [leetcode animation](https://github.com/MisterBooo/LeetCodeAnimation)
 - [ ] [FuckingAlgorithm](https://github.com/labuladong/fucking-algorithm)
 
