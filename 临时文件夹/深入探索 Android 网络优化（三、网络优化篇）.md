@@ -1,15 +1,3 @@
----
-
-		title:  深入探索 Android 网络优化（三、网络优化篇）
-		date: 2020/2/5 17:43:00   
-		tags: 
-		- Android进阶
-		categories: Android进阶
-		thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557665970516&di=b58d306a0db07efca58f8c9b655f5c13&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160520%2Ftooopen_sl_055418231108.jpg
----
-
----
-
 # 前言
 
 ### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
@@ -571,7 +559,7 @@ API 23 之后。
 2020-05-11 10:47:55.652 4036-4181/json.chao.com.wanandroid I/WanAndroid-LOG: │ [MainActivity.java | 197 | lambda$initEventAndData$1$MainActivity] totalNetUseData: 8 MB
 ```
 
- 
+
 # 四、网络请求流量优化
 
 ## 1、常见使用网络的场景
@@ -1868,51 +1856,4 @@ com.android.okhttp.internal.http.Strea
 - 25、[QUIC在手机微博中的应用实践.pdf](https://github.com/thinkpiggy/qcon2018ppt/blob/master/QUIC%E5%9C%A8%E6%89%8B%E6%9C%BA%E5%BE%AE%E5%8D%9A%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E5%AE%9E%E8%B7%B5.pdf)
 - 26、[Hook Socket Sample](https://github.com/AndroidAdvanceWithGeektime/Chapter17)
 - 27、[RFC 目录](https://tools.ietf.org/rfc/index)
-
-
-
-# Contanct Me
-
-##  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-##  ●  微信群：
-
-> **由于微信群人数过多，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-        
-
-##  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-## About me
-
-- ### Email: [chao.qu521@gmail.com]()
-- ### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- ### 掘金: [https://juejin.im/user/5a3ba9375188252bca050ade](https://juejin.im/user/5a3ba9375188252bca050ade)
-    
-
-### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/5a3ba9375188252bca050ade)上一起分享知识。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

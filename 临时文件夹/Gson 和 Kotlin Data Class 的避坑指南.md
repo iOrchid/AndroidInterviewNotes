@@ -1,7 +1,3 @@
-> 公众号：[字节数组](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/adbc507fc3704fd8955aae739a433db2~tplv-k3u1fbpfcp-zoom-1.image)
->
-> 希望对你有所帮助 🤣🤣
-
 在蛮久前有同事问过我关于一个 Gson 和 Kotlin dataClass 的问题，当时答不上来也没去细究，但一直都放在心底，今天就认真探究下原因，也输出总结了一下，希望能帮助你避开这个坑 😂😂
 
 来看个小例子，猜猜其运行结果会是怎样的
@@ -310,5 +306,3 @@ Exception in thread "main" java.lang.NullPointerException: Gson().fromJson(json,
 
 
 因此，当我们从 Kotlin 承接 Gson 这个 Java 类返回的变量时，既可以将其当做 UserBean 类型，也可以当做 UserBean? 类型。而如果我们直接显式声明为 UserBean 类型，就说明我们确信返回的是非空类型，当返回的是 null 时就会触发 Kotlin 的 null 检查，导致直接抛出 NullPointerException
-
-关于平台类型的知识点摘抄自我的另一篇 Kotlin 教程文章：[两万六千字带你 Kotlin 入门](https://juejin.cn/post/6880602489297895438#heading-36)

@@ -1,18 +1,4 @@
----
-
-		title:   Android触摸事件传递机制
-		date: 2018/10/17 22:38:00   
-		tags: 
-		- Android进阶
-		categories: 安卓进阶
-		thumbnail: https://i.ytimg.com/vi/YoJCu8IUSwk/maxresdefault.jpg
----
-
----
-
 ## 前言
-
-#### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
 
 ### 一、了解Activity的构成
 
@@ -73,11 +59,11 @@
         // 返回了false，那么Activity的onTouchEvent就会被调用
         return onTouchEvent(ev);
     }
-    
+
 ##### 2.抽象类Window#superDispatchTouchEvent
 
     public abstract boolean superDispatchTouchEvent(MotionEvent event);
-    
+
 ##### 3.唯一实现类PhoneWindow#superDispatchTouchEvent
 
     public boolean superDispatchTouchEvent(MotionEvent event) {
@@ -121,7 +107,7 @@
             intercepted = true;
         }
     }
-    
+
 ##### 3.dispatchTouchEvent()方法剩余的部分源码
 
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -191,7 +177,7 @@
         }
         ...
     }
-    
+
 ##### 5.事件传递到View的dispatchTouchEvent()
 
     public boolean dispatchTouchEvent(MotionEvent event) {
@@ -242,7 +228,7 @@
         }
         return true;
     }
-    
+
 ##### 7.在ACTION_UP事件中会调用performCLick()方法
 
     public boolean performClick() {
@@ -277,7 +263,7 @@
         }
         return consume;
     }
-    
+
 一些重要的结论：
 
 1.事件传递优先级：onTouchListener.onTouch > onTouchEvent > onClickListener.onClick。
@@ -299,13 +285,6 @@
 ![image](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/722474ded4664c868befde04808119b0~tplv-k3u1fbpfcp-zoom-1.image)
 
 
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bce509ff5dfc4b24870d5ce08604ab31~tplv-k3u1fbpfcp-zoom-1.image)
-
-
 ##### 参考链接：
 ---
 1、Android开发艺术探索
@@ -322,47 +301,3 @@
 
 7、[Android开发之漫漫长途 Ⅵ——图解Android事件分发机制（深入底层源码）](http://mp.weixin.qq.com/s?__biz=MzIxNzU1Nzk3OQ==&mid=2247486486&idx=1&sn=7acc1c9dd8c600ad0ec2db7d32f82f1f&chksm=97f6b2a2a0813bb425cf8bf329bf0e856d3769ac8e21ed5a9a6cb7c57b1097c41f94afe4202d&scene=38#wechat_redirect)
 
-
-
-## 赞赏
-
-如果这个库对您有很大帮助，您愿意支持这个项目的进一步开发和这个项目的持续维护。你可以扫描下面的二维码，让我喝一杯咖啡或啤酒。非常感谢您的捐赠。谢谢！
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/534068ff08d44c9097bbbc45c0b0252a~tplv-k3u1fbpfcp-zoom-1.image" width=20%><img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ffc93060e0bd4c5bad2d66682f55af4f~tplv-k3u1fbpfcp-zoom-1.image" width=20%>
-</div>
-
-
-----
-
-## Contanct Me
-
-###  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-###  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/83711ccc9a0947d597edeefeecd32119~tplv-k3u1fbpfcp-zoom-1.image" width=35%>
-</div>
-        
-
-###  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-### About me
-
-- #### Email: [chao.qu521@gmail.com]()
-- #### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- #### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-#### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-#### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

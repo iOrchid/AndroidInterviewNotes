@@ -1,18 +1,6 @@
----
-
-		title:  深入探索 Android 内存优化（炼狱级别）
-		date: 2019/12/29 18:54:00   
-		tags: 
-		- 性能优化
-		categories: 性能优化
-		thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557665970516&di=b58d306a0db07efca58f8c9b655f5c13&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160520%2Ftooopen_sl_055418231108.jpg
----
-
----
-
 # 前言
 
-### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
+成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
 
 本篇是 Android 内存优化的进阶篇，难度可以说达到了炼狱级别，建议对内存优化不是非常熟悉的仔细看看前篇文章： [Android性能优化之内存优化](https://juejin.im/post/6844904096541966350)，其中详细分析了以下几大模块：
 
@@ -121,7 +109,7 @@ Android给每个应用进程分配的内存都是非常有限的，那么，**�
 
     LPDDR系列的带宽 = 时钟频率 ✖️内存总线位数 / 8
     LPDDR4 = 1600MHZ ✖️64 / 8 ✖️双倍速率 = 25.6GB/s。
-    
+
 
 ### 那么内存占用是否越少越好？
 
@@ -569,8 +557,9 @@ Epic通常的使用步骤为如下三个步骤：
 
 
     compile 'me.weishu:epic:0.6.0'
-    
-    
+
+
+​    
 2、继承 XC_MethodHook，实现 Hook 方法前后的逻辑。如 **监控Java线程的创建和销毁**：
 
 
@@ -581,7 +570,7 @@ Epic通常的使用步骤为如下三个步骤：
             Thread t = (Thread) param.thisObject;
             Log.i(TAG, "thread:" + t + ", started..");
         }
-
+    
         @Override
         protected void afterHookedMethod(MethodHookParam param) throws Throwable {
             super.afterHookedMethod(param);
@@ -589,8 +578,9 @@ Epic通常的使用步骤为如下三个步骤：
             Log.i(TAG, "thread:" + t + ", exit..");
         }
     }
-    
-    
+
+
+​    
 3、注入 Hook 好的方法：
 
 
@@ -613,15 +603,16 @@ Epic通常的使用步骤为如下三个步骤：
             DexposedBridge.findAndHookMethod(ImageView.class, "setImageBitmap", Bitmap.class, new ImageHook());
             }
         });
-        
-        
+
+
+​        
 在注释1处，我们 **通过调用 DexposedBridge 的 findAndHookMethod 方法找到所有通过 ImageView 的 setImageBitmap 方法设置的切入点**，其中最后一个参数 ImageHook 对象是继承了 XC_MethodHook 类，其目的是为了 **重写 afterHookedMethod 方法拿到相应的参数进行监控逻辑的判断**。
-        
+​        
 接下来，我们来实现我们的 ImageHook 类，代码如下所示：
 
 
     public class ImageHook extends XC_MethodHook {
-
+    
         @Override
         protected void afterHookedMethod(MethodHookParam param) throws Throwable {
             super.afterHookedMethod(param);
@@ -666,18 +657,19 @@ Epic通常的使用步骤为如下三个步骤：
                 }
             }
         }
-
+    
         private static void warn(int bitmapWidth, int bitmapHeight, int viewWidth, int viewHeight, Throwable t) {
             String warnInfo = "Bitmap size too large: " +
                 "\n real size: (" + bitmapWidth + ',' + bitmapHeight + ')' +
                 "\n desired size: (" + viewWidth + ',' + viewHeight + ')' +
                 "\n call stack trace: \n" + Log.getStackTraceString(t) + '\n';
-
+    
             LogHelper.i(warnInfo);
         }
     }
-    
-    
+
+
+​    
 首先，在注释1处，我们**重写了 ImageHook 的 afterHookedMethod 方法，拿到了当前的 ImageView 和要设置的 Bitmap 对象**。然后，在注释2处，**如果当前 ImageView 的宽高大于0，我们便进行大图检测的处理：ImageView 的宽高都大于 View 的2倍以上，则警告**。接着，在注释3处，**如果当前 ImageView 的宽高等于0，则说明 ImageView 还没有进行绘制，则使用 ImageView 的 ViewTreeObserver 获取其宽高进行大图检测的处理**。至此，我们的大图检测检测组件就已经实现了。如果有小伙伴对 **epic** 的实现原理感兴趣的，可以查看[这篇文章](http://weishu.me/2017/11/23/dexposed-on-art/)。
 
 
@@ -702,10 +694,10 @@ Epic通常的使用步骤为如下三个步骤：
 
 使用非常简单，只需要修改 **Main** 类的 **main** 方法的第一行代码，如下所示：
 
-    
+
     // 设置我们自己 App 中对应的 hprof 文件路径
     String dumpFilePath = "//Users//quchao//Documents//heapdump//memory-40.hprof";
-    
+
 
 然后，我们执行 **main** 方法即可在 **//Users//quchao//Documents//heapdump** 这个路径下看到生成的 **images** 文件夹，里面保存了项目中检测出来的重复的图片。**images** 目录如下所示：
 
@@ -816,26 +808,28 @@ Epic通常的使用步骤为如下三个步骤：
 
     File heapDumpFile = ...
     Debug.dumpHprofData(heapDumpFile.getAbsolutePath());
-    
-    
+
+
+​    
 #### 2、根据堆栈文件创建出内存映射文件缓冲区
- 
- 
+
+
     DataBuffer buffer = new MemoryMappedFileBuffer(heapDumpFile);
 
 
 #### 3、根据文件缓存区创建出对应的快照
-    
-    
+
+
     Snapshot snapshot = Snapshot.createSnapshot(buffer);
 
 
 #### 4、从快照中获取指定的类
-  
-  
+
+
     ClassObj someClass = snapshot.findClass("com.example.SomeClass");
+
  
- 
+
 我们在实现线上版的LeakCanary的时候主要要解决的问题有三个，如下所示：
 
 
@@ -898,13 +892,14 @@ Epic通常的使用步骤为如下三个步骤：
 
 计算触顶率的代码如下所示：
 
-   
+
     long javaMax = Runtime.maxMemory();
     long javaTotal = Runtime.totalMemory();
     long javaUsed = javaTotal - runtime.freeMemory();
     float proportion = (float) javaUsed / javaMax;
-    
-    
+
+
+​    
 如果超过 **85% 最大堆** 的限制，**GC** 会变得更加 **频发**，容易造成 **OOM 和 卡顿**。
 
 
@@ -942,8 +937,9 @@ Epic通常的使用步骤为如下三个步骤：
     long allocCount = Debug.getGlobalAllocCount();
     long allocSize = Debug.getGlobalAllocSize();
     long gcCount = Debug.getGlobalGcInvocationCount();
- 
-    
+
+
+​    
 并且，在 **Android 6.0 及之后** 可以拿到 **更精准** 的 **GC** 信息：
 
 
@@ -951,8 +947,9 @@ Epic通常的使用步骤为如下三个步骤：
     Debug.getRuntimeStat("art.gc.gc-time");
     Debug.getRuntimeStat("art.gc.blocking-gc-count");
     Debug.getRuntimeStat("art.gc.blocking-gc-time");
-    
-    
+
+
+​    
 对于 **GC 信息的排查**，我们一般关注 **阻塞式GC的次数和耗时**，因为它会 **暂停线程**，可能导致应用发生 **卡顿**。建议 **仅对重度场景使用**。
 
 
@@ -1041,20 +1038,22 @@ Prope 的 **总体架构图** 如下所示：
 ### 使用步骤
 
 具体的使用步骤如下所示：
- 
+
 #### 1、首先，点击 ”开始记录“ 按钮可以看到触发对象分配的记录，说明对象已经开始记录对象的分配，log如下所示：
 
 
     12-26 10:54:03.963 30450-30450/com.dodola.alloctrack I/AllocTracker: ====current alloc count 388=====
-    
-    
+
+
+​    
 #### 2、然后，点击多次 ”生成1000个对象“ 按钮，当对象达到设置的最大数量的时候触发内存dump，会得到保存数据路径的日志。如下所示：
 
 
     12-26 10:54:03.963 30450-30450/com.dodola.alloctrack I/AllocTracker: ====current alloc count 388=====
     12-26 10:56:45.103 30450-30450/com.dodola.alloctrack I/AllocTracker: saveARTAllocationData write file to /storage/emulated/0/crashDump/1577329005
-    
-    
+
+
+​    
 #### 3、此时，可以看到数据保存在 sdk 下的 crashDump 目录下。
 
 
@@ -1147,19 +1146,21 @@ Prope 的 **总体架构图** 如下所示：
 
 计算当前应用内存占最大内存的比例的代码如下：
 
-  
+
     max = Runtime.getRuntime().maxMemory();
     available = Runtime.getRuntime.totalMemory() - Runtime.getFreeMemory();
     ratio = available / max;
-    
-    
+
+
+​    
 显示地除去应用的 memory，以加速内存收集过程的代码如下所示：
 
 
     WindowManagerGlobal.getInstance().startTrimMemory(TRIM_MEMORY_COMPLETE);
-    
-    
-    
+
+
+​    
+​    
 ### 5、由于 webview 存在内存系统泄漏，还有 图库占用内存过多 的问题，可以采用单独的进程。
 
 
@@ -1241,9 +1242,9 @@ top 命令是 Linux 下常用的性能分析工具，能够 **实时显示系统
 
     quchao@quchaodeMacBook-Pro ~ % adb shell top --help
     usage: top [-Hbq] [-k FIELD,] [-o FIELD,] [-s SORT] [-n NUMBER] [-d SECONDS] [-p PID,] [-u USER,]
-
+    
     Show process activity in real time.
-
+    
     -H	Show threads
     -k	Fallback sort FIELDS (default -S,-%CPU,-ETIME,-PID)
     -o	Show FIELDS (def PID,USER,PR,NI,VIRT,RES,SHR,S,%CPU,%MEM,TIME+,CMDLINE)
@@ -1255,11 +1256,12 @@ top 命令是 Linux 下常用的性能分析工具，能够 **实时显示系统
     -p	Show these PIDs
     -u	Show these USERs
     -q	Quiet (no header lines)
-
+    
     Cursor LEFT/RIGHT to change sort, UP/DOWN move list, space to force
     update, R to reverse sort, Q to exit.
-    
-    
+
+
+​    
 这里使用 top 仅显示一次进程信息，以便来讲解进程信息中各字段的含义。
 
 
@@ -1388,7 +1390,7 @@ USS 虽然没有这个问题，但是由于 **Dalvik 虚拟机申请内存牵扯
     quchao@quchaodeMacBook-Pro ~ % adb shell dumpsys meminfo
     Applications Memory Usage (in Kilobytes):
     Uptime: 257501238 Realtime: 257501238
-
+    
     // 根据进程PSS占用值从大到小排序
     Total PSS by process:
         308,049K: com.tencent.mm (pid 3760 / activities)
@@ -1399,7 +1401,7 @@ USS 虽然没有这个问题，但是由于 **Dalvik 虚拟机申请内存牵扯
         175,231K: json.chao.com.wanandroid (pid 23104 / activities)
         126,918K: com.tencent.mobileqq (pid 23741)
         ...
-   
+       
     // 以oom来划分，会详细列举所有的类别的进程
     Total PSS by OOM adjustment:
         432,013K: Native
@@ -1474,7 +1476,7 @@ USS 虽然没有这个问题，但是由于 **Dalvik 虚拟机申请内存牵扯
             24,477K: com.android.mms (pid 27192)
             23,865K: com.xiaomi.market (pid 27825)
             ...
-
+    
     // 按内存的类别来进行划分
     Total PSS by category:
         957,931K: Native
@@ -1523,15 +1525,16 @@ total | - | 总内存、剩余内存、可用内存、其他内存 |
 
     dumpsys meminfo <pid> // 输出指定pid的某一进程
     dumpsys meminfo --package <packagename> // 输出指定包名的进程，可能包含多个进程
- 
-    
+
+
+​    
 这里我们输入 adb shell dumpsys meminfo 23104 这条命令，其中 23104 为 Awesome-WanAndroid App 的 pid，结果如下所示：
 
 
     quchao@quchaodeMacBook-Pro ~ % adb shell dumpsys meminfo 23104
     Applications Memory Usage (in Kilobytes):
     Uptime: 258375231 Realtime: 258375231
-
+    
     ** MEMINFO in pid 23104 [json.chao.com.wanandroid] **
                     Pss  Private  Private  SwapPss     Heap     Heap     Heap
                     Total    Dirty    Clean    Dirty     Size    Alloc     Free
@@ -1555,7 +1558,7 @@ total | - | 总内存、剩余内存、可用内存、其他内存 |
       GL mtrack    14864    14864        0        0
         Unknown     2532     2500        8       20
           TOTAL   174545   143852    18736      303    92448    66591    25856
-
+    
     App Summary
                        Pss(KB)
                         ------
@@ -1566,9 +1569,9 @@ total | - | 总内存、剩余内存、可用内存、其他内存 |
             Graphics:    60288
        Private Other:    11196
               System:    11957
-
+    
                TOTAL:   174545       TOTAL SWAP PSS:      303
-
+    
     Objects
                Views:      171         ViewRootImpl:        1
          AppContexts:        3           Activities:        1
@@ -1577,11 +1580,11 @@ total | - | 总内存、剩余内存、可用内存、其他内存 |
        Parcel memory:       11         Parcel count:       45
     Death Recipients:        1      OpenSSL Sockets:        0
             WebViews:        0
-
+    
     SQL
             MEMORY_USED:      371
      PAGECACHE_OVERFLOW:       72          MALLOC_SIZE:      117
-
+    
     DATABASES
         pgsz     dbsz   Lookaside(b)          cache  Dbname
             4       60            109      151/32/18  /data/user/0/json.chao.com.wanandroid/databases/bugly_db_
@@ -1650,7 +1653,7 @@ LeakInspector 是腾讯内部的使用的 **一站式内存泄漏解决方案**�
     Field field = sCurrentActivityThread.getClass().getDeclaredField("mInstumentation");
     field.setAccessible(true);
     field.set(sCurrentActivityThread, new MonitorInstumentation());
-    
+
 
 #### 二、泄漏现场处理方面不同
 
@@ -1706,8 +1709,9 @@ LeakInspector 是腾讯内部的使用的 **一站式内存泄漏解决方案**�
             recycleViewGroup(app, (ViewGroup) view);
         }
     }
-  
-    
+
+
+​    
 这里以 recycleTextView 为例，它回收资源的方式如下所示：
 
 
@@ -1749,30 +1753,31 @@ JHat 是 Oracle 推出的一款 Hprof 分析软件，它和 MAT 并称为 Java �
     quchao@quchaodeMacBook-Pro ~ % jhat
     ERROR: No arguments supplied
     Usage:  jhat [-stack <bool>] [-refs <bool>] [-port <port>] [-baseline <file>] [-debug <int>] [-version] [-h|-help] <file>
-
-	    -J<flag>          Pass <flag> directly to the runtime system. For
-			    example, -J-mx512m to use a maximum heap size of 512MB
-	    -stack false:     Turn off tracking object allocation call stack.
-	    -refs false:      Turn off tracking of references to objects
-	    -port <port>:     Set the port for the HTTP server.  Defaults to 7000
-	    -exclude <file>:  Specify a file that lists data members that should
-			    be excluded from the reachableFrom query.
-	    -baseline <file>: Specify a baseline object dump.  Objects in
-			    both heap dumps with the same ID and same class will
-			    be marked as not being "new".
-	    -debug <int>:     Set debug level.
-			        0:  No debug output
-			        1:  Debug hprof file parsing
-			        2:  Debug hprof file parsing, no server
-	    -version          Report version number
-	    -h|-help          Print this help and exit
-	    <file>            The file to read
-
+    
+        -J<flag>          Pass <flag> directly to the runtime system. For
+    		    example, -J-mx512m to use a maximum heap size of 512MB
+        -stack false:     Turn off tracking object allocation call stack.
+        -refs false:      Turn off tracking of references to objects
+        -port <port>:     Set the port for the HTTP server.  Defaults to 7000
+        -exclude <file>:  Specify a file that lists data members that should
+    		    be excluded from the reachableFrom query.
+        -baseline <file>: Specify a baseline object dump.  Objects in
+    		    both heap dumps with the same ID and same class will
+    		    be marked as not being "new".
+        -debug <int>:     Set debug level.
+    		        0:  No debug output
+    		        1:  Debug hprof file parsing
+    		        2:  Debug hprof file parsing, no server
+        -version          Report version number
+        -h|-help          Print this help and exit
+        <file>            The file to read
+    
     For a dump file that contains multiple heap dumps,
     you may specify which dump in the file
     by appending "#<number>" to the file name, i.e. "foo.hprof#3".
-    
-    
+
+
+​    
 出现如上输出，则表明存在 jhat 命令。它的使用很简单，直在命令行输入 jhat xxx.hprof 即可，如下所示：
 
 
@@ -1899,7 +1904,7 @@ Android 4.4 及以上系统的原生浏览器就是 Chrome 浏览器，可以使
     if (Build.VERSION_SDK_INT >= Build.VERSION_CODES.KITKAT && 是debug模式) {
         WebView.setWebContentsDebuggingEnabled(ture);
     }
-    
+
 
 打开后的调试方法跟纯 H5 页面调试方法一样，直接在 App 中打开 H5 页面，再到 PC Chrome 的 inpsector 页面就可以看到调试目标页面。
 
@@ -1985,7 +1990,7 @@ Android 4.4 及以上系统的原生浏览器就是 Chrome 浏览器，可以使
 
 我们应该在 item 被回收不可见时去释放掉对图片的引用。如果你使用的是 **ListView**，由于每次 item 被回收后被再次利用都会去重新绑定数据，所以只需**在 ImageView 回调其 onDetchFromWindow 方法的时候区释放掉图片的引用即可**。如果你使用的是 **RecyclerView**，因为被回收不可见时第一次选择是放进 mCacheView中，但是这里面的 item 被复用时并不会去执行 bindViewHolder 来重新绑定数据，只有被回收进 mRecyclePool 后拿出来复用才会重新绑定数据。所以此时我们应该**在 item 被回收进 RecyclePool 的时候去释放图片的引用**，这里我们只要去 **重写 Adapter 中的 onViewRecycled 方法** 就可以了，代码如下所示：
 
-    
+
     @Override
     public void onViewRecycled(@Nullable VH holder) {
         super.onViewRecycled(holder);
@@ -1993,8 +1998,9 @@ Android 4.4 及以上系统的原生浏览器就是 Chrome 浏览器，可以使
             //做释放图片引用的操作
         }
     }
-    
-    
+
+
+​    
 ## 10、使用 ViewStub 进行占位
 
 我们应该使用 ViewStub  **对那些没有马上用到的资源去做延迟加载**，并且还有**很多大概率不会出现的 View 更要去做懒加载**，这样可以等到要使用时再去为它们分配相应的内存。
@@ -2013,7 +2019,7 @@ Android 4.4 及以上系统的原生浏览器就是 Chrome 浏览器，可以使
     Field f = job.getClass().getDeclaredField("this$0");
     f.setAccessible(true);
     f.set(job, null);
-    
+
 
 这个任务就是我们的 Runnable 对象，而 ”this$0“ 就是上面所指的外部类的引用了。这里注意使用 WeakReference 装起来，要执行了先 get 一下，如果是 null 则说明 Activity 已经回收，任务就放弃执行。
 
@@ -2112,68 +2118,4 @@ Android 4.4 及以上系统的原生浏览器就是 Chrome 浏览器，可以使
 总的来看，要建立一套 **全面且成体系的内存优化及监控** 是非常重要也是极具挑战性的一项工作。并且，目前各大公司的 **内存优化体系** 也正处于 **不断演进的历程** 之中，其目的不外乎：**实现更健全的功能、更深层次的定位问题、快速准确地发现线上问题**。
 
 > 路漫漫其修远兮，吾将上下而求索
-    
 
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2c40d2837bd74c8f8fa6e2e51621b6b1~tplv-k3u1fbpfcp-zoom-1.image)
-
-
-##### 参考链接：
----
-1、[国内Top团队大牛带你玩转Android性能分析与优化 第四章 内存优化](https://coding.imooc.com/class/308.html)
-
-2、[极客时间之Android开发高手课 内存优化](https://time.geekbang.org/column/article/71277)
-
-3、[微信 Android 终端内存优化实践](https://mp.Aweixin.qq.com/s/KtGfi5th-4YHOZsEmTOsjg?)
-
-4、[GMTC－Android内存泄漏自动化链路分析组件Probe.key](https://static001.geekbang.org/con/19/pdf/593bc30c21689.pdf)
-
-5、[Manage your app's memory](https://developer.android.com/topic/performance/memory#monitor)
-
-6、[Overview of memory management](https://developer.android.com/topic/performance/memory-overview.html)
-
-7、[Android内存优化杂谈](https://mp.weixin.qq.com/s/Z7oMv0IgKWNkhLon_hFakg)
-
-8、[Android性能优化之内存篇](http://hukai.me/android-performance-memory/)
-
-9、[管理应用的内存](http://hukai.me/android-training-managing_your_app_memory/)
-
-10、《Android移动性能实战》第二章 内存
-
-11、[每天一个linux命令（44）：top命令](https://www.cnblogs.com/peida/archive/2012/12/24/2831353.html)
-
-12、[Android内存分析命令](http://gityuan.com/2016/01/02/memory-analysis-command/)
-
-
-# Contanct Me
-
-##  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-##  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/82d13657943b4e2db339066c5194786c~tplv-k3u1fbpfcp-zoom-1.image)
-        
-
-##  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-## About me
-
-- ### Email: [chao.qu521@gmail.com]()
-- ### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- ### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

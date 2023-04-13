@@ -1,48 +1,5 @@
----
-
-		title:  Android主流三方库源码分析（一、深入理解OKHttp源码）
-		date: 2018/12/01 19:49:00   
-		tags: 
-		- Android主流三方库源码分析
-		categories: 安卓主流三方库源码分析
-		thumbnail: https://lc-gold-cdn.xitu.io/8a2873772d249d3c2d01.png
----
-
----
-
 ## 前言
 
-#### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
-
-[更好的阅读体验请跳转至个人博客](https://jsonchao.github.io/2018/12/01/Android%E4%B8%BB%E6%B5%81%E4%B8%89%E6%96%B9%E5%BA%93%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88%E4%B8%80%E3%80%81%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3OKHttp%E6%BA%90%E7%A0%81%EF%BC%89/)
-
-前两篇我们详细分析了View的核心源码—[Android的触摸事件传递机制](https://jsonchao.github.io/2018/10/17/Android%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E6%9C%BA%E5%88%B6/)和[Android View的绘制流程](https://jsonchao.github.io/2018/10/28/Android%20View%E7%9A%84%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B/)，从这篇开始，笔者接下来将会陪大家深入分析目前Android中大部分的主流开源框架源码，从而能够让我们真正地去理解这些优秀开源框架背后的思想，真真切切地提升自己的内功。目前，这一系列的分析顺序如下：
-
-    主流三方库：
-    网络：
-    1、OKHttp
-    2、Retrofit
-    图片：
-    3、Glide
-    数据库：
-    4、GreenDao
-    响应式编程：
-    5、RxJava
-    内存泄露：
-    6、LeakCanary
-    依赖注入：
-    7、ButterKnife
-    8、Dagger2
-    事件总线：
-    9、EventBus
-    
-    
-总结成思维导图，就是这样的：
-
-
-![image](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/55ff6ec297f74422930fdd01d345fe1e~tplv-k3u1fbpfcp-zoom-1.image)
-
-    
 这一篇将会对Android的三方网络库OKHttp源码进行深入的分析，在阅读过OKHttp源码和大量其它优秀的OKHttp源码分析文章后，我发现只要搞懂以下这三块，就能**证明你对OKHttp有了一个深入的了解**。
 
 - OKHttp请求流程
@@ -78,7 +35,7 @@ OKHttp内部的大致请求流程图如下所示：
 #### 1.新建OKHttpClient客户端
 
     OkHttpClient client = new OkHttpClient();
-
+    
     public OkHttpClient() {
         this(new Builder());
     }
@@ -86,7 +43,7 @@ OKHttp内部的大致请求流程图如下所示：
     OkHttpClient(Builder builder) {
         ....
     }
-    
+
 可以看到，OkHttpClient使用了建造者模式，Builder里面的可配置参数如下：
 
     public static final class Builder {
@@ -118,7 +75,7 @@ OKHttp内部的大致请求流程图如下所示：
         int readTimeout;
         int writeTimeout;
         int pingInterval;
-
+    
         // 这里是默认配置的构建参数
         public Builder() {
             dispatcher = new Dispatcher();
@@ -126,7 +83,7 @@ OKHttp内部的大致请求流程图如下所示：
             connectionSpecs = DEFAULT_CONNECTION_SPECS;
             ...
         }
-
+    
         // 这里传入自己配置的构建参数
         Builder(OkHttpClient okHttpClient) {
             this.dispatcher = okHttpClient.dispatcher;
@@ -210,7 +167,7 @@ OKHttp内部的大致请求流程图如下所示：
         // 使用责任链模式开启链式调用
         return chain.proceed(originalRequest);
     }
-
+    
     // StreamAllocation 对象，它相当于一个管理类，维护了服务器连接、并发流
     // 和请求之间的关系，该类还会初始化一个 Socket 连接对象，获取输入/输出流对象。
     public Response proceed(Request request, StreamAllocation streamAllocation, HttpCodec httpCodec,
@@ -231,15 +188,16 @@ OKHttp内部的大致请求流程图如下所示：
         
         return response;
     }
-    
-    
+
+
+​    
 #### 3.异步请求的流程
 
 
     Request request = new Request.Builder()
         .url("http://publicobject.com/helloworld.txt")
         .build();
-
+    
     client.newCall(request).enqueue(new Callback() {
         @Override 
         public void onFailure(Call call, IOException e) {
@@ -260,19 +218,19 @@ OKHttp内部的大致请求流程图如下所示：
     
     // 正在准备中的异步请求队列
     private final Deque<AsyncCall> readyAsyncCalls = new ArrayDeque<>();
-
+    
     // 运行中的异步请求
     private final Deque<AsyncCall> runningAsyncCalls = new ArrayDeque<>();
-
+    
     // 同步请求
     private final Deque<RealCall> runningSyncCalls = new ArrayDeque<>();
-
+    
     // Promotes eligible calls from {@link #readyAsyncCalls} to {@link #runningAsyncCalls} and runs
     // them on the executor service. Must not be called with synchronization because executing calls
     // can call into user code.
     private boolean promoteAndExecute() {
         assert (!Thread.holdsLock(this));
-
+    
         List<AsyncCall> executableCalls = new ArrayList<>();
         boolean isRunning;
         synchronized (this) {
@@ -298,8 +256,9 @@ OKHttp内部的大致请求流程图如下所示：
     
         return isRunning;
     }
-    
-    
+
+
+​    
 最后，我们在看看AsynCall的代码。
 
 
@@ -373,7 +332,8 @@ OKHttp内部的大致请求流程图如下所示：
         }
     }
 
-    
+
+​    
 从上面的源码可以知道，拦截链的处理OKHttp帮我们默认做了五步拦截处理，其中RetryAndFollowUpInterceptor、BridgeInterceptor、CallServerInterceptor内部的源码很简洁易懂，此处不再多说，下面将对OKHttp最为核心的两部分：缓存处理和连接处理（连接池）进行讲解。   
 
 
@@ -498,8 +458,9 @@ OKHttp内部的大致请求流程图如下所示：
         return realChain.proceed(request, streamAllocation, httpCodec, connection);
     }
 
-    
-    
+
+​    
+​    
     // Returns a connection to host a new stream. This // prefers the existing connection if it exists,
     // then the pool, finally building a new connection.
     // 调用 streamAllocation 的 newStream() 方法的时候，最终会经过一系列
@@ -628,7 +589,7 @@ OKHttp内部的大致请求流程图如下所示：
         eventListener.connectionAcquired(call, result);
         return result;
     }
-    
+
 从以上的源码分析可知：
 - 判断当前的连接是否可以使用：流是否已经被关闭，并且已经被限制创建新的流；
 - 如果当前的连接无法使用，就从连接池中获取一个连接；
@@ -641,7 +602,7 @@ OKHttp内部的大致请求流程图如下所示：
 OkHttp 的缓存管理分成两个步骤，一边当我们创建了一个新的连接的时候，我们要把它放进缓存里面；另一边，我们还要来对缓存进行清理。在 ConnectionPool 中，当我们向连接池中缓存一个连接的时候，只要调用双端队列的 add() 方法，将其加入到双端队列即可，而清理连接缓存的操作则交给线程池来定时执行。
 
     private final Deque<RealConnection> connections = new ArrayDeque<>();
-
+    
     void put(RealConnection connection) {
     assert (Thread.holdsLock(this));
         if (!cleanupRunning) {
@@ -733,13 +694,6 @@ OkHttp 的缓存管理分成两个步骤，一边当我们创建了一个新的�
 经过上面对OKHttp内部工作机制的一系列分析，我相信你已经对OKHttp已经有了一个比较深入的了解了。首先，我们会在请求的时候初始化一个Call的实例，然后执行它的execute()方法或enqueue()方法，内部最后都会执行到getResponseWithInterceptorChain()方法，这个方法里面通过拦截器组成的责任链，依次经过用户自定义普通拦截器、重试拦截器、桥接拦截器、缓存拦截器、连接拦截器和用户自定义网络拦截器以及访问服务器拦截器等拦截处理过程，来获取到一个响应并交给用户。其中，除了OKHttp的内部请求流程这点之外，缓存和连接这两部分内容也是两个很重要的点，相信经过本文的讲解，读者对着三部分重点内容已经有了自己的理解。后面，将会为大家带来OKHttp的封装框架Retrofit源码的深入分析，敬请期待~
 
 
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0ae37106e40f469ab3335b663ea320df~tplv-k3u1fbpfcp-zoom-1.image)
-
-
 ##### 参考链接：
 ---
 1、OKHttp V3.12.0源码
@@ -749,47 +703,3 @@ OkHttp 的缓存管理分成两个步骤，一边当我们创建了一个新的�
 2、[OKHttp源码解析](https://www.jianshu.com/p/27c1554b7fee)
 
 3、[Andriod 网络框架 OkHttp 源码解析](https://juejin.im/post/6844904133103747086#heading-10)
-
-
-## 赞赏
-
-如果这个库对您有很大帮助，您愿意支持这个项目的进一步开发和这个项目的持续维护。你可以扫描下面的二维码，让我喝一杯咖啡或啤酒。非常感谢您的捐赠。谢谢！
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f0c83dd2b0ef465ca7645e66364c2d46~tplv-k3u1fbpfcp-zoom-1.image" width=20%><img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1372700689134f819f48b2cd008f3d8d~tplv-k3u1fbpfcp-zoom-1.image" width=20%>
-</div>
-
-
-----
-
-## Contanct Me
-
-###  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-###  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/39f4acedb6504ea691ff2f9688feeee5~tplv-k3u1fbpfcp-zoom-1.image" width=35%>
-</div>
-        
-
-###  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-### About me
-
-- #### Email: [chao.qu521@gmail.com]()
-- #### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- #### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-#### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-#### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

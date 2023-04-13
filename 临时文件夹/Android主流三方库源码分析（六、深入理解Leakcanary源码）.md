@@ -42,7 +42,7 @@
       // 可选，如果你使用支持库的fragments的话
       debugImplementation   'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
     }
-    
+
 然后在你的Application中配置:
 
     public class WanAndroidApp extends Application {
@@ -81,7 +81,7 @@
           .excludedRefs(AndroidExcludedRefs.createAppDefaults().build())
           .buildAndInstall();
     }
-    
+
 在install()方法中的处理，可以分解为如下四步：
 
 - 1、**refWatcher(application)**
@@ -101,13 +101,13 @@
 
     /** A {@link RefWatcherBuilder} with appropriate Android defaults. */
     public final class AndroidRefWatcherBuilder extends RefWatcherBuilder<AndroidRefWatcherBuilder> {
-
+    
     ...
     
         AndroidRefWatcherBuilder(@NonNull Context context) {
             this.context = context.getApplicationContext();
         }
-
+    
     ...
     }
 
@@ -125,7 +125,7 @@
     
         ...
     }
-    
+
 在RefWatcher的基类构造器RefWatcherBuilder的构造方法中新建了一个HeapDump的构造器对象。其中**HeapDump就是一个保存heap dump信息的数据结构**。
 
 接着来分析下install()方法中的链式调用的listenerServiceClass(DisplayLeakService.class)这部分逻辑。
@@ -136,7 +136,7 @@
       @NonNull Class<? extends AbstractAnalysisResultService> listenerServiceClass) {
         return heapDumpListener(new ServiceHeapDumpListener(context, listenerServiceClass));
     }
-    
+
 在这里，传入了一个DisplayLeakService的Class对象，它的作用是展示泄露分析的结果日志，然后会展示一个用于跳转到显示泄露界面DisplayLeakActivity的通知。在listenerServiceClass()这个方法中新建了一个ServiceHeapDumpListener对象，下面看看它内部的操作。
 
 ## 5、ServiceHeapDumpListener
@@ -181,7 +181,7 @@
         
         ...
     }
-    
+
 先来说下**AndroidExcludedRefs**这个类，它是一个enum类，它**声明了Android SDK和厂商定制的SDK中存在的内存泄露的case**，根据AndroidExcludedRefs这个类的类名就可看出这些case**都会被Leakcanary的监测过滤掉**。目前这个版本是有**46种**这样的**case**被包含在内，后续可能会一直增加。然后EnumSet.allOf(AndroidExcludedRefs.class)这个方法将会返回一个包含AndroidExcludedRefs元素类型的EnumSet。Enum是一个抽象类，在这里具体的实现类是**通用正规型的RegularEnumSet，如果Enum里面的元素个数大于64，则会使用存储大数据量的JumboEnumSet**。最后，在createBuilder这个方法里面构建了一个排除引用的建造器excluded，将各式各样的case分门别类地保存起来再返回出去。
 
 最后，我们看到链式调用的最后一步buildAndInstall()。
@@ -190,7 +190,7 @@
 
     private boolean watchActivities = true;
     private boolean watchFragments = true;
-
+    
     public @NonNull RefWatcher buildAndInstall() {
         // 1
         if (LeakCanaryInternals.installedRefWatcher != null) {
@@ -215,7 +215,7 @@
         LeakCanaryInternals.installedRefWatcher = refWatcher;
         return refWatcher;
     }
-    
+
 首先，在注释1处，会判断LeakCanaryInternals.installedRefWatcher是否已经被赋值，如果被赋值了，则会抛出异常，警告
 buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时，即在注释6处，该LeakCanaryInternals.installedRefWatcher才会被赋值。再来看注释2处，调用了AndroidRefWatcherBuilder其基类RefWatcherBuilder的build()方法，我们它是如何建造的。
 
@@ -262,7 +262,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
         return new RefWatcher(watchExecutor, debuggerControl, gcTrigger, heapDumper, heapDumpListener,
             heapDumpBuilder);
     }
-    
+
 可以看到，**RefWatcherBuilder包含了以下7个组成部分：**
 
 - 1、**excludedRefs : 记录可以被忽略的泄漏路径**。
@@ -323,7 +323,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
     implements Application.ActivityLifecycleCallbacks {
     
     }
-    
+
 很明显，这里**实现并重写了Application的ActivityLifecycleCallbacks的onActivityDestroyed()方法，这样便能在所有Activity执行完onDestroyed()方法之后调用 refWatcher.watch(activity)这行代码进行内存泄漏的检测了**。
 
 我们再看到注释5处的FragmentRefWatcher.Helper.install(context, refWatcher)这行代码，
@@ -331,7 +331,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
 ## 11、FragmentRefWatcher.Helper#install()
 
     public interface FragmentRefWatcher {
-
+    
         void watchFragments(Activity activity);
     
         final class Helper {
@@ -371,7 +371,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
           
         ...
     }
-    
+
 这里面的逻辑很简单，首先在注释1处将Android标准的Fragment的RefWatcher类，即AndroidOfFragmentRefWatcher添加到新创建的fragmentRefWatchers中。在注释2处**使用反射将leakcanary-support-fragment包下面的SupportFragmentRefWatcher添加进来，如果你在app的build.gradle下没有添加下面这行引用的话，则会拿不到此类，即LeakCanary只会检测Activity和标准Fragment这两种情况**。
 
     debugImplementation   'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
@@ -386,7 +386,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
             }
         }
     };
-        
+
 可以看到，在Activity执行完onActivityCreated()方法之后，会调用指定watcher的watchFragments()方法，注意，这里的watcher可能有两种，但不管是哪一种，都会使用当前传入的activity获取到对应的FragmentManager/SupportFragmentManager对象，调用它的registerFragmentLifecycleCallbacks()方法，在对应的onDestroyView()和onDestoryed()方法执行完后，分别使用refWatcher.watch(view)和refWatcher.watch(fragment)进行内存泄漏的检测，代码如下所示。
 
     @Override public void onFragmentViewDestroyed(FragmentManager fm, Fragment fragment) {
@@ -395,12 +395,12 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
             refWatcher.watch(view);
         }
     }
-
+    
     @Override
     public void onFragmentDestroyed(FragmentManagerfm, Fragment fragment) {
         refWatcher.watch(fragment);
     }
-    
+
 注意，下面到真正关键的地方了，接下来分析refWatcher.watch()这行代码。
 
 #### 12、RefWatcher#watch()
@@ -423,7 +423,7 @@ buildAndInstall()这个方法应该仅仅只调用一次，在此方法结束时
         // 4
         ensureGoneAsync(watchStartNanoTime, reference);
     }
-    
+
 注意到在注释1处**使用随机的UUID保证了每个检测对象对应
 key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteArraySet的Set集合中。在注释3处新建了一个自定义的弱引用KeyedWeakReference，看看它内部的实现。
 
@@ -441,7 +441,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
           this.name = checkNotNull(name, "name");
         }
     }
-    
+
 可以看到，**在KeyedWeakReference内部，使用了key和name标识了一个被检测的WeakReference对象**。在注释1处，**将弱引用和引用队列 ReferenceQueue 关联起来，如果弱引用reference持有的对象被GC回收，JVM就会把这个弱引用加入到与之关联的引用队列referenceQueue中。即 KeyedWeakReference 持有的 Activity 对象如果被GC回收，该对象就会加入到引用队列 referenceQueue 中**。
 
 接着我们回到RefWatcher.watch()里注释4处的ensureGoneAsync()方法。
@@ -465,7 +465,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
 ## 15、AndroidWatchExecutor
 
     public final class AndroidWatchExecutor implements WatchExecutor {
-
+    
         ...
         
         public AndroidWatchExecutor(long initialDelayMillis)     {
@@ -499,7 +499,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         }
       });
     }
-    
+
 很清晰，这里使用了在构造方法中用主线程looper构造的mainHandler进行post，那么waitForIdle()最终也会在主线程执行。接着看看waitForIdle()的实现。
 
     private void waitForIdle(final Retryable retryable,     final int failedAttempts) {
@@ -510,7 +510,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         }
       });
     }
-    
+
 这里**MessageQueue.IdleHandler()回调方法的作用是当 looper 空闲的时候，会回调 queueIdle 方法，利用这个机制我们可以实现第三方库的延迟初始化**，然后执行内部的postToBackgroundWithDelay()方法。接下来看看它的实现。
 
     private void postToBackgroundWithDelay(final Retryable retryable, final int failedAttempts) {
@@ -529,7 +529,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         }
       }, delayMillis);
     }
-    
+
 先看到注释4处，可以明白，postToBackgroundWithDelay()是一个递归方法，如果result 一直等于RETRY的话，则会一直执行postWaitForIdle()方法。在回到注释1处，这里initialDelayMillis 的默认值是 5s，因此delayMillis就是5s。在注释2处，使用了在构造方法中用HandlerThread的looper新建的backgroundHandler进行异步延时执行retryable的run()方法。这个run()方法里执行的就是RefWatcher的ensureGoneAsync()方法中注释2处的ensureGone()这行代码，继续看它内部的逻辑。
 
 ## 16、RefWatcher#ensureGone()
@@ -580,7 +580,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         }
         return DONE;
     }
-    
+
 在注释1处，执行了removeWeaklyReachableReferences()这个方法，接下来分析下它的含义。
 
     private void removeWeaklyReachableReferences() {
@@ -589,7 +589,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
             retainedKeys.remove(ref.key);
         }
     }
-    
+
 这里使用了while循环遍历 ReferenceQueue ，并从 retainedKeys中移除对应的Reference。
 
 再看到注释2处，**当Android设备处于debug状态时，会直接返回RETRY进行延时重试检测的操作**。在注释3处，我们看看gone(reference)这个方法的逻辑。
@@ -597,7 +597,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
     private boolean gone(KeyedWeakReference reference) {
         return !retainedKeys.contains(reference.key);
     }
-    
+
 这里会**判断 retainedKeys 集合中是否还含有 reference，若没有，证明已经被回收了，若含有，可能已经发生内存泄露（或Gc还没有执行回收）**。前面的分析中我们知道了 **reference 被回收的时候，会被加进 referenceQueue 里面，然后我们会调用removeWeaklyReachableReferences()遍历 referenceQueue 移除掉 retainedKeys 里面的 refrence**。
 
 接着我们看到注释4处，执行了gcTrigger的runGc()方法进行垃圾回收，然后使用了removeWeaklyReachableReferences()方法移除已经被回收的引用。这里我们再深入地分析下runGc()的实现。
@@ -631,11 +631,11 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
 
     public File dumpHeap() {
         File heapDumpFile = leakDirectoryProvider.newHeapDumpFile();
-
+    
         if (heapDumpFile == RETRY_LATER) {
             return RETRY_LATER;
         }
-
+    
         ...
         
         try {
@@ -649,8 +649,9 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
           return RETRY_LATER;
         }
     }
-    
-    
+
+
+​    
 这里的核心操作就是**调用了Android SDK的API Debug.dumpHprofData() 来生成 hprof 文件**。
 
 如果这个文件等于RETRY_LATER则表示生成失败，直接返回RETRY进行延时重试检测的操作。如果不等于的话，则表示生成成功，最后会**执行heapdumpListener的analyze()对新创建的HeapDump对象进行泄漏分析**。由前面对AndroidRefWatcherBuilder的listenerServiceClass()的分析可知，heapdumpListener的实现
@@ -662,14 +663,14 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         checkNotNull(heapDump, "heapDump");
         HeapAnalyzerService.runAnalysis(context, heapDump, listenerServiceClass);
     }
-        
+
 可以看到，这里**执行了HeapAnalyzerService的runAnalysis()方法，为了避免降低app进程的性能或占用内存，这里将HeapAnalyzerService设置在了一个独立的进程中**。接着继续分析runAnalysis()方法里面的处理。
 
     public final class HeapAnalyzerService extends ForegroundService
     implements AnalyzerProgressListener {
     
         ...
-
+    
         public static void runAnalysis(Context context, HeapDump heapDump,
         Class<? extends AbstractAnalysisResultService> listenerServiceClass) {
             ...
@@ -681,11 +682,11 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         
         @Override protected void onHandleIntentInForeground(@Nullable Intent intent) {
             ...
-
+    
             // 1
             HeapAnalyzer heapAnalyzer =
                 new HeapAnalyzer(heapDump.excludedRefs, this, heapDump.reachabilityInspectorClasses);
-
+    
             // 2
             AnalysisResult result = heapAnalyzer.checkForLeak(heapDump.heapDumpFile, heapDump.referenceKey,
             heapDump.computeRetainedHeapSize);
@@ -695,7 +696,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         }
             ...
     }
-    
+
 这里的HeapAnalyzerService实质是一个类型为IntentService的ForegroundService，执行startForegroundService()之后，会回调onHandleIntentInForeground()方法。注释1处，首先会新建一个**HeapAnalyzer**对象，顾名思义，它就是**根据RefWatcher生成的heap dumps信息来分析被怀疑的泄漏是否是真的**。在注释2处，然后会**调用它的checkForLeak()方法去使用haha库解析 hprof文件**，如下所示：
 
     public @NonNull AnalysisResult checkForLeak(@NonNull File heapDumpFile,
@@ -720,7 +721,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
       
         // 4
         Instance leakingRef = findLeakingReference(referenceKey, snapshot);
-
+    
         // 5
         if (leakingRef == null) {
             return noLeak(since(analysisStartNanoTime));
@@ -732,13 +733,13 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         return failure(e, since(analysisStartNanoTime));
         }
     }
-    
+
 在注释1处，会新建一个**内存映射缓存文件buffer**。在注释2处，会**使用buffer新建一个HprofParser解析器去解析出对应的引用内存快照文件snapshot**。在注释3处，**为了减少在Android 6.0版本中重复GCRoots带来的内存压力的影响，使用deduplicateGcRoots()删除了gcRoots中重复的根对象RootObj**。在注释4处，**调用了findLeakingReference()方法将传入的referenceKey和snapshot对象里面所有类实例的字段值对应的keyCandidate进行比较，如果没有相等的，则表示没有发生内存泄漏**，直接调用注释5处的代码返回一个没有泄漏的分析结果AnalysisResult对象。**如果找到了相等的，则表示发生了内存泄漏**，执行注释6处的代码findLeakTrace()方法返回一个有泄漏分析结果的AnalysisResult对象。
 
 最后，我们来分析下HeapAnalyzerService中注释3处的AbstractAnalysisResultService.sendResultToListener()方法，很明显，这里AbstractAnalysisResultService的实现类就是我们刚开始分析的用于展示泄漏路径信息的DisplayLeakService对象。在里面直接**创建一个由PendingIntent构建的泄漏通知用于供用户点击去展示详细的泄漏界面DisplayLeakActivity**。核心代码如下所示：
 
     public class DisplayLeakService extends AbstractAnalysisResultService {
-
+    
         @Override
         protected final void onHeapAnalyzed(@NonNull AnalyzedHeap analyzedHeap) {
         
@@ -776,7 +777,7 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
         String failureTitle = getString(R.string.leak_canary_result_failure_title);
         showNotification(null, failureTitle, failureMessage);
     }
-    
+
 可以看到，只要当分析的堆信息文件保存成功之后，即在注释1处返回的resultSaved为true时，才会执行注释2处的逻辑，即创建一个供用户点击跳转到DisplayLeakActivity的延时通知。最后给出一张源码流程图用于回顾本篇文章中LeakCanary的运作流程：
 
 ![image](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d0363331db824e7ab342e4bd74702a93~tplv-k3u1fbpfcp-zoom-1.image)
@@ -785,14 +786,6 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
 
 性能优化一直是Android中进阶和深入的方向之一，而内存泄漏一直是性能优化中比较重要的一部分，Android Studio自身提供了MAT等工具去分析内存泄漏，但是分析起来比较耗时耗力，因而才诞生了LeakCanary，它的使用非常简单，但是经过对它的深入分析之后，才发现，**简单的API后面往往藏着许多复杂的逻辑处理，尝试去领悟它们，你可能会发现不一样的世界**。
 
-
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6b4b4edabb6e4ca285fcdc59f99a0dd9~tplv-k3u1fbpfcp-zoom-1.image)
-
-
 ##### 参考链接：
 ---
 1、LeakCanary V1.6.2 源码
@@ -800,36 +793,3 @@ key 的唯一性**。在注释2处将生成的key添加到类型为CopyOnWriteAr
 2、[一步步拆解 LeakCanary](https://mp.weixin.qq.com/s?__biz=MzA5MzI3NjE2MA==&mid=2650243402&idx=1&sn=e7632788e8e147320b26a1b006cabf4c&chksm=88637025bf14f933dcf90fbd1d7f9090e3802dd37759cac014ac1ed73c455fb9b5d9953bb89f&scene=38#wechat_redirect)
 
 3、[深入理解 Android 之 LeakCanary 源码解析](https://allenwu.itscoder.com/leakcanary-source)
-
-
-## Contanct Me
-
-###  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-###  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e88dbbb593f6456db55efc5c7a1d2e0a~tplv-k3u1fbpfcp-zoom-1.image" width=35%>
-</div>
-        
-
-###  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-### About me
-
-- #### Email: [chao.qu521@gmail.com]()
-- #### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- #### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-#### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-#### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

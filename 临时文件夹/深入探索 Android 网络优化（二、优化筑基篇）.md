@@ -1,15 +1,3 @@
----
-
-		title:  深入探索 Android 网络优化（二、优化筑基篇）
-		date: 2020/2/5 17:43:00   
-		tags: 
-		- Android进阶
-		categories: Android进阶
-		thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b99同步 IO 与异步 IO 的区别？ 99_10000&sec=1557665970516&di=b58d306a0db07efca58f8c9b655f5c13&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160520%2Ftooopen_sl_055418231108.jpg
----
-
----
-
 # 前言
 
 ### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
@@ -19,7 +7,6 @@
 
 
 ![](https://user-gold-cdn.xitu.io/2020/5/28/17258db02dc66ec1?w=3570&h=2150&f=png&s=1030166)
-
 
 # 一、为什么要进行网络优化？
 
@@ -1499,50 +1486,3 @@ Linux AIO库函数实现，但通常使用开源的异步 IO 库，例如 libeve
 - 15、[聊聊Linux 五种IO模型](https://www.jianshu.com/p/486b0965c296)
 - 16、[Unix 网络 IO 模型及 Linux 的 IO 多路复用模型](http://matt33.com/2017/08/06/unix-io/)
 - 17、[Android epoll.c](http://androidxref.com/9.0.0_r3/xref/external/libevent/epoll.c)
-
-
-# Contanct Me
-
-##  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-##  ●  微信群：
-
-> 微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。
-
-![](https://user-gold-cdn.xitu.io/2020/5/22/17239e28165c97d3?w=1080&h=2047&f=png&s=104771)    
-
-
-##  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-## About me
-
-- ### Email: [chao.qu521@gmail.com]()
-- ### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- ### 掘金: [https://juejin.im/user/5a3ba9375188252bca050ade](https://juejin.im/user/5a3ba9375188252bca050ade)
-    
-
-### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/5a3ba9375188252bca050ade)上一起分享知识。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

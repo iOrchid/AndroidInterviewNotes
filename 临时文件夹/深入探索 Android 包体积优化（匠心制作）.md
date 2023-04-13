@@ -1,31 +1,3 @@
----
-
-		title:  深入探索Android包体积优化
-		date: 2020/2/18 20:21:00   
-		tags: 
-		- 性能优化
-		categories: 性能优化
-		thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557665970516&di=b58d306a0db07efca58f8c9b655f5c13&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160520%2Ftooopen_sl_055418231108.jpg
----
-
----
-
-# 前言
-
-### 成为一名优秀的Android开发，需要一份完备的 [知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
-
-在 **Android** 性能优化的知识体系当中，包体积优化一直被排在优先级比较低的位置，从而导致很多开发同学对自身应用的大小并不重视。在项目发展的历程中，一般可划分为如下三个阶段：
-
-
-    初创期 => 成长期 => 成熟期
-
-
-​    
-通常来说，**当应用处于成长期的中后阶段时，才会考虑去做系统的包体积优化**，因此，只有在这个阶段及之后，包体积优化带来的收益才是可观的。
-
-那么，包体积优化能够给我们带来哪些 **收益** 呢？如何全面对应用的包体积进行 **系统分析** 及 **针对性优化** 呢？在这篇文章中，我们将一起进行深入地分析与探索。
-
-
 # 思维导图大纲
 
 
@@ -686,26 +658,26 @@ D8 与 R8 的作用非常强大，而 Jake Wharton  大神最近一年多也在�
 
 
 ​    
-    {
-        "redex" : {
-            "passes" : [
-                "InterDexPass",
-                "RegAllocPass"
-            ]
-        },
-        "InterDexPass" : {
-            "minimize_cross_dex_refs": true,
-            "minimize_cross_dex_refs_method_ref_weight": 100,
-            "minimize_cross_dex_refs_field_ref_weight": 90,
-            "minimize_cross_dex_refs_type_ref_weight": 100,
-            "minimize_cross_dex_refs_string_ref_weight": 90
-        },
-        "RegAllocPass" : {
-            "live_range_splitting": false
-        },
-        "string_sort_mode" : "class_order",
-        "bytecode_sort_mode" : "class_order"
-    }
+​    {
+​        "redex" : {
+​            "passes" : [
+​                "InterDexPass",
+​                "RegAllocPass"
+​            ]
+​        },
+​        "InterDexPass" : {
+​            "minimize_cross_dex_refs": true,
+​            "minimize_cross_dex_refs_method_ref_weight": 100,
+​            "minimize_cross_dex_refs_field_ref_weight": 90,
+​            "minimize_cross_dex_refs_type_ref_weight": 100,
+​            "minimize_cross_dex_refs_string_ref_weight": 90
+​        },
+​        "RegAllocPass" : {
+​            "live_range_splitting": false
+​        },
+​        "string_sort_mode" : "class_order",
+​        "bytecode_sort_mode" : "class_order"
+​    }
 
 
 为了衡量优化效果，我们可以使用 **Dex 信息有效率** 这个指标，公式如下所示：
@@ -1703,40 +1675,3 @@ XZ Utils 是具有高压缩率的免费通用数据压缩软件，它**同 7-Zip
 
 42、[西瓜视频apk瘦身之 Java access 方法删除](https://mp.weixin.qq.com/s/ZHisCVjO_ZrtvvEWBYUQFQ)
 
-
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e452e0996ed543a38ef1747294f11065~tplv-k3u1fbpfcp-zoom-1.image)
-
-
-# Contanct Me
-
-##  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-##  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/643bc5073ac0487f830f09b4f7347b8c~tplv-k3u1fbpfcp-zoom-1.image)
-        
-
-##  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-## About me
-
-- ### Email: [chao.qu521@gmail.com]()
-- ### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- ### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-  
-
-
-### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

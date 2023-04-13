@@ -1,22 +1,4 @@
----
-
-		title:  Android性能优化之内存优化
-		date: 2019/8/18 22:12:00   
-		tags: 
-		- 性能优化
-		categories: 性能优化
-		thumbnail: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557665970516&di=b58d306a0db07efca58f8c9b655f5c13&imgtype=0&src=http%3A%2F%2Fimg02.tooopen.com%2Fimages%2F20160520%2Ftooopen_sl_055418231108.jpg
----
-
----
-
 # 前言
-
-### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
-
-
-    Tips：本篇是《深入探索Android内存优化》的基础篇，如果没有掌握Android内存优化的同学建议系统学习一遍。
-    
 
 众所周知，内存优化可以说是性能优化中最重要的优化点之一，可以说，**如果你没有掌握系统的内存优化方案，就不能说你对Android的性能优化有过多的研究与探索**。本篇，笔者将带领大家一起来系统地学习Android中的内存优化。
 
@@ -269,8 +251,9 @@ JVM 将整个内存划分为了几块，分别如下所示：
 
 
     D/dalvikvm(7030)：GC_CONCURRENT freed 1049K, 60% free 2341K/9351K, external 3502K/6261K, paused 3ms 3ms
-    
-    
+
+
+​    
 GC_CONCURRENT 是当前GC时的类型，GC日志中有以下几种类型：
 
 - **GC_CONCURRENT**：当应用程序中的Heap内存占用上升时（分配对象大小超过384k），避免Heap内存满了而触发的GC。如果发现有大量的GC_CONCURRENT出现，说明应用中**可能一直有大于384k的对象被分配，而这一般都是一些临时对象被反复创建**，可能是**对象复用不够所导致的**。
@@ -487,7 +470,7 @@ WebView都存在内存泄漏的问题，在应用中只要使用一次WebView，
             ...
         }
     }
-    
+
 
 重写 **afterDefaultHanding** 方法，在其中处理需要的数据，三个参数的定义如下：
 
@@ -595,7 +578,7 @@ ArrayMap提供了和HashMap一样的功能，但避免了过多的内存开销�
 使用IntDef和StringDef需要在Gradle配置中引入相应的依赖包：
 
     compile 'com.android.support:support-annotations:22.0.0'
-    
+
 
 ### 3、LruCache
 
@@ -619,17 +602,18 @@ ArrayMap提供了和HashMap一样的功能，但避免了过多的内存开销�
     BitmapFactory.Options options = new BitmapFactory.Options();
     options.inPreferredConfig = Bitmap.Config.RGB_565;
     BitmapFactory.decodeStream(is, null, options);
-    
+
 
 ### 2、inSampleSize：位图功能对象中的inSampleSize属性实现了位图的缩放功能，代码如下所示：
 
-    
+
     BitampFactory.Options options = new BitmapFactory.Options();
     // 设置为4就是宽和高都变为原来1/4大小的图片
     options.inSampleSize = 4;
     BitmapFactory.decodeSream(is, null, options);
-    
-    
+
+
+​    
 ### 3、inScaled，inDensity和inTargetDensity实现更细的缩放图片：当inScaled设置为true时，系统会按照现有的密度来划分目标密度，代码如下所示：
 
 
@@ -638,8 +622,9 @@ ArrayMap提供了和HashMap一样的功能，但避免了过多的内存开销�
     options.inDensity = srcWidth;
     options.inTargetDensity = dstWidth;
     BitmapFactory.decodeStream(is, null, options);
-    
-    
+
+
+​    
 上述三种方案的缺点：使用了过多的算法，导致图片显示过程需要更多的时间开销，如果图片很多的话，就影响到图片的显示效果。最好的方案是结合这两个方法，达到最佳的性能结合，首先使用inSampleSize处理图片，转换为接近目标的2次幂，然后用inDensity和inTargetDensity生成最终想要的准确大小，因为inSampleSize会减少像素的数量，而基于输出密码的需要对像素重新过滤。但获取资源图片的大小，需要设置位图对象的inJustDecodeBounds值为true，然后继续解码图片文件，这样才能生产图片的宽高数据，并允许继续优化图片。总体的代码如下所示：
 
 
@@ -652,8 +637,9 @@ ArrayMap提供了和HashMap一样的功能，但避免了过多的内存开销�
     Options.inTargetDensity = desWith * options.inSampleSize;
     options.inJustDecodeBounds = false;
     BitmapFactory.decodeStream(is, null, options);
-    
-    
+
+
+​    
 ## 5、inBitmap
 
 可以结合LruCache来实现，在LruCache移除超出cache size的图片时，暂时缓存Bitamp到一个软引用集合，需要创建新的Bitamp时，可以从这个软用用集合中找到最适合重用的Bitmap，来重用它的内存区域。
@@ -723,16 +709,16 @@ ImageLoader是实现图片加载的基类，其中ImageLoader有一个内部类B
         private boolean mExitTasksEarly = false;   //是否提前结束
         protected boolean mPauseWork = false;
         private final Object mPauseWorkLock = new   Object();
- 
+     
         protected ImageLoader() {
- 
+     
         }
- 
+     
         public void loadImage(String url, ImageView imageView) {
             if (url == null) {
                 return;
             }
- 
+     
             BitmapDrawable bitmapDrawable = null;
             if (bitmapDrawable != null) {
                 imageView.setImageDrawable(bitmapDrawable);
@@ -741,7 +727,7 @@ ImageLoader是实现图片加载的基类，其中ImageLoader有一个内部类B
                 task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
         }
- 
+     
         private class BitmapLoadTask extends AsyncTask<Void, Void, Bitmap> {
     
             private String mUrl;
@@ -817,12 +803,14 @@ ImageLoader是实现图片加载的基类，其中ImageLoader有一个内部类B
     
         protected abstract Bitmap downLoadBitmap(String    mUrl);
     }
+
  
- 
+
+
 setPauseWork方法是图片加载线程控制接口，pauseWork控制图片模块的暂停和继续工作，一般在listView等控件中，滑动时停止加载图片，保证滑动流畅。另外，具体的图片下载和解码是和业务强相关的，因此在ImageLoader中不做具体的实现，只是定义类一个抽象方法。
 
 MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，减少对象开销，并管理应用中所有的图片加载。MiniImageLoader代码如下所示：
- 
+
 
     public class MiniImageLoader extends ImageLoader {
         
@@ -886,6 +874,8 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
     }
 
  
+
+
 其中，volatile保证了对象从主内存加载。并且，上面的try ...cache层级太多，Java中有一个Closeable接口，该接口标识类一个可关闭的对象，因此可以写如下的工具类：
 
 
@@ -903,8 +893,10 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
     }
 
  
+
+
 改造后如下所示：
- 
+
 
     finally {
         if  (urlConnection != null) {
@@ -928,8 +920,10 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
             }
         
     }
-    
+
  
+
+
 ### 2 单个图片内存优化
 
 这里使用一个BitmapConfig类来实现参数的配置，代码如下所示:
@@ -985,11 +979,13 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
             return inSampleSize;
         }
     }
+
  
- 
+
+
 然后，调用MiniImageLoader的downLoadBitmap方法，增加获取BitmapFactory.Options的步骤：
 
-    
+
     final URL url = new URL(urlString);
     urlConnection = (HttpURLConnection) url.openConnection();
     in = urlConnection.getInputStream();
@@ -1086,7 +1082,7 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
             }
         }
     }
- 
+
 
 上述代码中cacheSize百分比占比多少合适？可以基于以下几点来考虑：
 
@@ -1096,7 +1092,7 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
 - 4.图片访问的频率。
 
 在应用中，如果有一些图片的访问频率要比其它的大一些，或者必须一直显示出来，就需要一直保持在内存中，这种情况可以使用多个LruCache对象来管理多组Bitmap，对Bitmap进行分级，不同级别的Bitmap放到不同的LruCache中。
- 
+
 ### 2、bitmap内存复用
 
 从Android3.0开始Bitmap支持内存复用，也就是BitmapFactoy.Options.inBitmap属性，如果这个属性被设置有效的目标用对象，decode方法就在加载内容时重用已经存在的bitmap，这意味着Bitmap的内存被重新利用，这可以减少内存的分配回收，提高图片的性能。代码如下所示：
@@ -1107,6 +1103,8 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
     }
 
  
+
+
 因为inBitmap属性在Android3.0以后才支持，在entryRemoved方法中加入软引用集合，作为复用的源对象，之前是直接删除，代码如下所示：
 
 
@@ -1115,6 +1113,8 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
     }
 
  
+
+
 同样在3.0以上判断，需要分配一个新的bitmap对象时，首先检查是否有可复用的bitmap对象：
 
 
@@ -1124,7 +1124,7 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
          }
          return BitmapFactory.decodeStream(is, null, options);
      }
- 
+     
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private static void addInBitmapOptions(BitmapFactory.Options options, ImageCache cache) {
          options.inMutable = true;
@@ -1134,31 +1134,33 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
                  options.inBitmap = inBitmap;
              }
          }
- 
+     
      }
+
  
- 
+
+
 接着，我们使用cache.getBitmapForResubleSet方法查找一个合适的bitmap赋值给inBitmap。代码如下所示：
 
-    
+
     // 获取inBitmap,实现内存复用
     public Bitmap getBitmapFromReusableSet(BitmapFactory.Options options) {
         Bitmap bitmap = null;
-
+    
         if (mReusableBitmaps != null && !mReusableBitmaps.isEmpty()) {
             final Iterator<SoftReference<Bitmap>> iterator = mReusableBitmaps.iterator();
             Bitmap item;
-
+    
             while (iterator.hasNext()) {
                 item = iterator.next().get();
-
+    
                 if (null != item && item.isMutable()) {
                     if (canUseForInBitmap(item, options)) {
-
+    
                         Log.v("TEST", "canUseForInBitmap!!!!");
-
+    
                         bitmap = item;
-
+    
                         // Remove from reusable set so it can't be used again
                         iterator.remove();
                         break;
@@ -1169,18 +1171,19 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
                 }
             }
         }
-
+    
         return bitmap;
     }
-    
-    
+
+
+​    
 上述方法从软引用集合中查找规格可利用的Bitamp作为内存复用对象，因为使用inBitmap有一些限制，在Android 4.4之前，只支持同等大小的位图。因此使用了canUseForInBitmap方法来判断该Bitmap是否可以复用，代码如下所示：
 
 
     @TargetApi(Build.VERSION_CODES.KITKAT)
     private static boolean canUseForInBitmap(
             Bitmap candidate, BitmapFactory.Options targetOptions) {
-
+    
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT) {
             return candidate.getWidth() == targetOptions.outWidth
                     && candidate.getHeight() == targetOptions.outHeight
@@ -1188,13 +1191,15 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
         }
         int width = targetOptions.outWidth / targetOptions.inSampleSize;
         int height = targetOptions.outHeight / targetOptions.inSampleSize;
-
+    
         int byteCount = width * height * getBytesPerPixel(candidate.getConfig());
-
+    
         return byteCount <= candidate.getAllocationByteCount();
     }
+
  
- 
+
+
 ### 3、磁盘缓存
 
 由于磁盘读取时间是不可预知的，所以图片的解码和文件读取都应该在后台进程中完成。DisLruCache是Android提供的一个管理磁盘缓存的类。
@@ -1203,7 +1208,7 @@ MiniImageLoader是一个单例，保证一个应用只维护一个ImageLoader，
 
 
     public static DiskLruCache open(File directory, int appVersion, int valueCou9nt, long maxSize)
-    
+
 
 directory一般建议缓存到SD卡上。appVersion发生变化时，会自动删除前一个版本的数据。valueCount是指Key与Value的对应关系，一般情况下是1对1的关系。maxSize是缓存图片的最大缓存数据大小。初始化DiskLruCache的代码如下所示：
 
@@ -1261,8 +1266,9 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
         }
         return sb.toString();
     }
-    
-    
+
+
+​    
 然后，写入需要保存的图片数据，图片数据写入本地缓存的整体代码如下所示：
 
 
@@ -1295,7 +1301,7 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+    
         }
     }
 
@@ -1313,7 +1319,7 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
             }
             if (mDiskLruCache != null) {
                 try {
-
+    
                     String key = hashKeyForDisk(imageUrl);
                     MLog.d(TAG,"getBitmapFromDiskCache get key:" + key);
                     DiskLruCache.Snapshot snapShot = mDiskLruCache.get(key);
@@ -1356,7 +1362,7 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
                 && imageViewReference.get() != null && !mExitTasksEarly) {
             bitmap = getmImageCache().getBitmapFromDisk(mUrl, mBitmapConfig);
         }
-
+    
         if (bitmap == null && !isCancelled()
                 && imageViewReference.get() != null && !mExitTasksEarly) {
             bitmap = downLoadBitmap(mUrl, mBitmapConfig);
@@ -1364,7 +1370,7 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
         if (bitmap != null) {
             getmImageCache().addToCache(mUrl, bitmap);
         }
-
+    
         return bitmap;
     }
 
@@ -1388,14 +1394,6 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
 
 对于内存优化，一般都是通过**使用MAT等工具来进行检查和使用LeakCanary等内存泄漏监控工具来进行监控**，以此来**发现问题**，再**分析问题**原因，**解决发现的问题**或者**对当前的实现逻辑进行优化**，**优化完后再进行检查，直到达到预定的性能指标**。下一篇文章，将会和大家一起来深入探索Android的内存优化，尽请期待~
 
-
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/864f909672e04e4ca634b6c510cb2da0~tplv-k3u1fbpfcp-zoom-1.image)
-
-
 ##### 参考链接：
 ---
 1、Android应用性能优化最佳实践
@@ -1403,36 +1401,3 @@ directory一般建议缓存到SD卡上。appVersion发生变化时，会自动�
 2、[必知必会 | Android 性能优化的方面方面都在这儿](https://mp.weixin.qq.com/s/QVOYF2nfoWMCbM5YsxQgRQ?)
 
 3、[实践App内存优化：如何有序地做内存分析与优化](https://juejin.im/post/6844903618642968590#heading-8)
-
-
-## Contanct Me
-
-###  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-###  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/411b1a26ba7b41ef895dfaa4228083be~tplv-k3u1fbpfcp-zoom-1.image" width=35%>
-</div>
-        
-
-###  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-### About me
-
-- #### Email: [chao.qu521@gmail.com]()
-- #### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- #### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-#### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-#### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。

@@ -1,21 +1,4 @@
----
-
-		title:  Android主流三方库源码分析（三、深入理解Glide源码）
-		date: 2018/12/16 20:19:00   
-		tags: 
-		- Android主流三方库源码分析
-		categories: 安卓主流三方库源码分析
-		thumbnail: http://www.glide.me/wp-content/uploads/2015/06/tweeter_1024x512_B.png
----
-
----
-
 ## 前言
-
-#### 成为一名优秀的Android开发，需要一份完备的[知识体系](https://github.com/JsonChao/Awesome-Android-Exercise)，在这里，让我们一起成长为自己所想的那样~。
-
-    tips:文章太长可以先点赞收藏哦，后续再慢慢阅读~
-    
 
 前两篇我们详细地分析了Android的网络底层框架OKHttp和封装框架Retrofit的核心源码，如果对OKHttp或Retrofit内部机制不了解的可以看看[Android主流三方库源码分析（一、深入理解OKHttp源码）](https://juejin.im/post/6844903631909552135)和[Android主流三方库源码分析（二、深入理解Retrofit源码）](https://juejin.im/post/6844903972071981064)。本篇，我们将会来深入地分析下目前Android使用最广泛的图片加载框架框架Glide的源码加载流程。
 
@@ -42,7 +25,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             <!--builder.setDiskCache(new InternalCacheDiskCacheFactory(context, diskCacheSizeBytes));-->
         }
     }
-    
+
 接下来，本文将针对Glide的最新源码版本V4.8.0对Glide加载网络图片的流程进行详细地分析与讲解，力争做到让读者朋友们知其然也知其所以然。
 
 ### 二、GlideApp.with(context)源码详解
@@ -108,7 +91,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         applicationContext.registerComponentCallbacks(glide    );
         Glide.glide = glide;
     }
-    
+
 #### 3、GlideBuilder#build
 
     @NonNull
@@ -178,7 +161,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         
         RequestManagerRetriever requestManagerRetriever =
         new RequestManagerRetriever(requestManagerFactory);
-
+    
         return new Glide(
             context,
             engine,
@@ -222,7 +205,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
                 engine,
                 logLevel);
     }
-     
+
 #### 5、RequestManagerRetriever#get
 
     @NonNull
@@ -243,7 +226,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
       // 否则直接将请求与ApplicationLifecycle关联
       return getApplicationManager(context);
     }
-    
+
 这里总结一下，对于当前传入的context是application或当前线程是子线程时，请求的生命周期和ApplicationLifecycle关联，否则，context是FragmentActivity或Fragment时，在当前组件添加一个SupportFragment（SupportRequestManagerFragment），context是Activity时，在当前组件添加一个Fragment(RequestManagerFragment)。
     
 #### 6、GlideApp#with小结
@@ -284,7 +267,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         isModelSet = true;
         return this;
     }
-    
+
 可以看到，load这部分的源码很简单，就是给GlideRequest（RequestManager）设置了要请求的mode（url），并记录了url已设置的状态。
 
 ##### 这里，我们再看看load方法的执行流程。
@@ -339,11 +322,11 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
           /*targetListener=*/ null,
           requestOptions);
     }
-    
+
 #### 2、GlideContext#buildImageViewTarget
 
     return imageViewTargetFactory.buildTarget(imageView, transcodeClass);
-     
+
 #### 3、ImageViewTargetFactory#buildTarget
 
     @NonNull
@@ -360,7 +343,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             "Unhandled class: " + clazz + ", try   .as*(Class).transcode(ResourceTranscoder)");
       }
     }
-    
+
 可以看到，Glide内部只维护了两种target，一种是BitmapImageViewTarget，另一种则是DrawableImageViewTarget，接下来继续深入。
     
 #### 4、RequestBuilder#into
@@ -419,7 +402,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             requestOptions.getOverrideHeight(),
             requestOptions);
     }
-
+    
     // 分析1
     private Request buildRequestRecursive(
           Target<TranscodeType> target,
@@ -484,7 +467,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
           // Recursive case: contains a potentially recursive thumbnail request builder.
           
           ...
-
+    
           ThumbnailRequestCoordinator coordinator = new ThumbnailRequestCoordinator(parentCoordinator);
           // 获取一个正常请求对象
           Request fullRequest =
@@ -532,7 +515,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
                   overrideHeight);
           RequestOptions thumbnailOptions = requestOptions.clone()
               .sizeMultiplier(thumbSizeMultiplier);
-
+    
           Request thumbnailRequest =
               obtainRequest(
                   target,
@@ -543,7 +526,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
                   getThumbnailPriority(priority),
                   overrideWidth,
                   overrideHeight);
-
+    
           coordinator.setRequests(fullRequest, thumbnailRequest);
           return coordinator;
         } else {
@@ -587,7 +570,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             glideContext.getEngine(),
             transitionOptions.getTransitionFactory());
     }
-    
+
 从上源码分析可知，我们在分析1处的buildRequest()方法里建立了请求，且最多可同时进行缩略图和正常图的请求，最后，调用了requestManager.track(target, request)方法，接着看看track里面做了什么。
     
 #### 5、RequestManager#track
@@ -601,7 +584,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
     }
 
 #### 6、RequestTracker#runRequest
-    
+
     /**
     * Starts tracking the given request.
     */
@@ -620,7 +603,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
           pendingRequests.add(request);
         }
     }
-    
+
 #### 7、SingleRequest#begin
 
     // 分析2
@@ -640,8 +623,9 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
       if (status == Status.RUNNING) {
         throw new IllegalArgumentException("Cannot   restart a running request");
       }
-    
-     
+
+
+​     
       if (status == Status.COMPLETE) {
         onResourceReady(resource,   DataSource.MEMORY_CACHE);
         return;
@@ -666,7 +650,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         logV("finished run method in " +   LogTime.getElapsedMillis(startTime));
       }
     }
-    
+
 从requestManager.track(target, request)开始，最终会执行到SingleRequest#begin()方法的onSizeReady，可以猜到（因为后面只做了预加载缩略图的处理），真正的请求就是从这里开始的，咱们进去一探究竟~
     
 #### 8、SingleRequest#onSizeReady
@@ -818,11 +802,11 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             : getActiveSourceExecutor();
         executor.execute(decodeJob);
     }
-    
+
 可以看到，最终Engine(引擎)类内部会执行到自身的start方法，它会根据不同的配置采用不同的线程池使用diskCacheExecutor/sourceUnlimitedExecutor/animationExecutor/sourceExecutor来执行最终的解码任务decodeJob。
 
 #### 10、DecodeJob#run
-    
+
     runWrapped();
     
     private void runWrapped() {
@@ -861,7 +845,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
             throw new IllegalStateException("Unrecognized     stage: " + stage);
         }
     }
-    
+
 #### 11、SourceGenerator#startNext
 
     // 关注点2
@@ -897,7 +881,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
       }
       return started;
     }
-    
+
 #### 12、DecodeHelper#getLoadData
 
     List<LoadData<?>> getLoadData() {
@@ -918,7 +902,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         }
         return loadData;
     }
-    
+
 #### 13、HttpGlideUrlLoader#buildLoadData
 
     @Override
@@ -1015,7 +999,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         }
         return stream;
     }
-    
+
 在HttpUrlFetcher#loadData方法的loadDataWithRedirects里面，Glide通过原生的HttpURLConnection进行请求后，并调用getStreamForSuccessfulRequest()方法获取到了最终的图片流。
 
 #### 15、DecodeJob#run
@@ -1023,7 +1007,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
 在我们通过HtttpUrlFetcher的loadData()方法请求得到对应的流之后，我们还必须对流进行处理得到最终我们想要的资源。这里我们回到第10步DecodeJob#run方法的关注点3处，这行代码将会对流进行解码。
 
     decodeFromRetrievedData();
-    
+
 接下来，继续看看他内部的处理。
 
     private void decodeFromRetrievedData() {
@@ -1078,7 +1062,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         // 将解码任务分发给LoadPath
         return runLoadPath(data, dataSource, path);
     }
-
+    
     private <Data, ResourceType> Resource<R> runLoadPath(Data data, DataSource dataSource,
       LoadPath<Data, ResourceType, R> path) throws GlideException {
         Options options = getOptionsWithHardwareConfig(dataSource);
@@ -1094,9 +1078,9 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
           rewinder.cleanup();
         }
     }
-    
+
 #### 16、LoadPath#load
-    
+
     public Resource<Transcode> load(DataRewinder<Data> rewinder, @NonNull Options options, int width,
       int height, DecodePath.DecodeCallback<ResourceType> decodeCallback) throws GlideException {
     List<Throwable> throwables = Preconditions.checkNotNull(listPool.acquire());
@@ -1145,7 +1129,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         Resource<ResourceType> transformed =     callback.onResourceDecoded(decoded);
         return transcoder.transcode(transformed, options);
     }
-
+    
     @NonNull
     private Resource<ResourceType> decodeResource(DataRewinder<DataType>   rewinder, int width,
         int height, @NonNull Options options) throws GlideException {
@@ -1191,7 +1175,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
       }
       return result;
     }
-    
+
 可以看到，经过一连串的嵌套调用，最终执行到了decoder.decode()这行代码，decode是一个ResourceDecoder<DataType, ResourceType>接口（资源解码器），根据不同的DataType和ResourceType它会有不同的实现类，这里的实现类是ByteBufferBitmapDecoder，接下来让我们来看看这个解码器内部的解码流程。
 
 #### 18、ByteBufferBitmapDecoder#decode
@@ -1212,7 +1196,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         return downsampler.decode(is, width, height, options);
       }
     }
-    
+
 可以看到，最终是使用了一个downsampler，它是一个压缩器，主要是对流进行解码，压缩，圆角等处理。
 
 #### 19、DownSampler#decode
@@ -1257,15 +1241,15 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         // 核心代码
         Bitmap downsampled = decodeStream(is, options, callbacks, bitmapPool);
         callbacks.onDecodeComplete(bitmapPool, downsampled);
-
+    
         ...
-
+    
         // Bimtap旋转处理
         ...
         
         return rotated;
     }
-
+    
     private static Bitmap decodeStream(InputStream is,     BitmapFactory.Options options,
           DecodeCallbacks callbacks, BitmapPool bitmapPool) throws   IOException {
         
@@ -1286,7 +1270,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         }
         return result;
     }
-    
+
 从以上源码流程我们知道，最后是在DownSampler的decodeStream()方法中使用了BitmapFactory.decodeStream()来得到Bitmap对象。然后，我们来分析下图片时如何显示的，我们回到步骤19的DownSampler#decode方法，看到关注点7，这里是将Bitmap包装成BitmapResource对象返回，通过内部的get方法可以得到Resource<Bitmap>对象，再回到步骤15的DecodeJob#run方法，这是使用了notifyEncodeAndRelease()方法对Resource<Bitmap>对象进行了发布。
 
 #### 20、DecodeJob#notifyEncodeAndRelease
@@ -1312,7 +1296,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
         Poolable {
         ...
     }
-    
+
 
 #### 21、EngineJob#onResourceReady
 
@@ -1340,7 +1324,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
           return true;
         }
     }
-    
+
 从以上源码可知，通过主线程Handler对象进行切换线程，然后在主线程调用了handleResultOnMainThread这个方法。
 
     @Synthetic
@@ -1358,7 +1342,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
      
       ...
     }
-    
+
 这里又通过一个循环调用了所有ResourceCallback的方法，让我们回到步骤9处Engine#load方法的关注点8这行代码，这里对ResourceCallback进行了注册，在步骤8出SingleRequest#onSizeReady方法里的engine.load中，我们看到最后一个参数，传入的是this，可以明白，engineJob.addCallback(cb)这里的cb的实现类就是SingleRequest。接下来，让我们看看SingleRequest的onResourceReady方法。
 
 #### 22、SingleRequest#onResourceReady
@@ -1398,7 +1382,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
     
         notifyLoadSuccess();
     }
-    
+
 在SingleRequest#onResourceReady方法中又调用了target.onResourceReady(result, animation)方法，这里的target其实就是我们在into方法中建立的那个BitmapImageViewTarget，看到BitmapImageViewTarget类，我们并没有发现onResourceReady方法，但是我们从它的子类ImageViewTarget中发现了onResourceReady方法，从这里我们继续往下看。
 
 #### 23、ImageViewTarget#onResourceReady
@@ -1407,7 +1391,7 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
     implements Transition.ViewAdapter {
     
         ...
-
+    
         @Override
         public void onResourceReady(@NonNull Z resource, @Nullable       Transition<? super Z> transition) {
           if (transition == null || !transition.transition(resource, this))   {
@@ -1437,14 +1421,15 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
     public class BitmapImageViewTarget extends ImageViewTarget<Bitmap> {
     
         ...
-        
-        
+
+
+​        
         @Override
         protected void setResource(Bitmap resource) {
           view.setImageBitmap(resource);
         }
     }
-    
+
 到这里，我们的分析就结束了，从以上的分析可知，Glide将大部分的逻辑处理都放在了最后一个into方法中，里面经过了20多个分析步骤才将请求图片流、解码出图片，到最终设置到对应的imageView上。
 
 ##### 最后，这里给出一份我花费了数个小时绘制的完整Glide加载流程图，非常珍贵，大家可以仔仔细细再把Glide的主体流程在梳理一遍。
@@ -1457,13 +1442,6 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
 到此，Glide整个的加载流程分析就结束了，可以看到，Glide最核心的逻辑都聚集在into()方法中，它里面的设计精巧而复杂，这部分的源码分析非常耗时，但是，如果你真真正正地去一步步去深入其中，你也许在Android进阶之路上将会有顿悟的感觉。目前，Android主流三方库源码分析系列已经对网络库（OkHttp、Retrofit）和图片加载库（Glide）进行了详细的源码分析，接下来，将会对数据库框架GreenDao的核心源码进行深入的分析，敬请期待~
 
 
-# 公众号
-
-我的公众号 `JsonChao` 开通啦，如果您想第一时间获取最新文章和最新动态，欢迎扫描关注~
-
-![](//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/67f603675080457ba5961556d443a128~tplv-k3u1fbpfcp-zoom-1.image)
-
-
 ##### 参考链接：
 ---
 1、Glide V4.8.0源码
@@ -1472,46 +1450,3 @@ Glide最基本的使用流程就是下面这行代码，其它所有扩展的额
 
 3、[glide源码分析](https://zhuanlan.zhihu.com/p/37297719)
 
-
-## 赞赏
-
-如果这个库对您有很大帮助，您愿意支持这个项目的进一步开发和这个项目的持续维护。你可以扫描下面的二维码，让我喝一杯咖啡或啤酒。非常感谢您的捐赠。谢谢！
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/74d2307a89094c3b9fa5389b103a2450~tplv-k3u1fbpfcp-zoom-1.image" width=20%><img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/178fedd47d544cacafd48b9135aa386c~tplv-k3u1fbpfcp-zoom-1.image" width=20%>
-</div>
-
-
-----
-
-## Contanct Me
-
-###  ●  微信：
-
-> 欢迎关注我的微信：`bcce5360`  
-
-###  ●  微信群：
-
-> **微信群如果不能扫码加入，麻烦大家想进微信群的朋友们，加我微信拉你进群。**
-
-<div align="center">
-<img src="//p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9ad9bfa18881454a989500a40218f82d~tplv-k3u1fbpfcp-zoom-1.image" width=35%>
-</div>
-        
-
-###  ●  QQ群：
-
-> 2千人QQ群，**Awesome-Android学习交流群，QQ群号：959936182**， 欢迎大家加入~
-
-
-### About me
-
-- #### Email: [chao.qu521@gmail.com]()
-- #### Blog: [https://jsonchao.github.io/](https://jsonchao.github.io/)
-- #### 掘金: [https://juejin.im/user/4318537403878167](https://juejin.im/user/4318537403878167)
-    
-
-
-#### 很感谢您阅读这篇文章，希望您能将它分享给您的朋友或技术群，这对我意义重大。
-
-#### 希望我们能成为朋友，在 [Github](https://github.com/JsonChao)、[掘金](https://juejin.im/user/4318537403878167)上一起分享知识。
