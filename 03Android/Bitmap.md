@@ -1,7 +1,8 @@
-@[TOC]
 # 1 简介
+
 `Bitmap` 在安卓中是一个非常重要的概念，翻译成中文就是位图，`Bitmap` 位图包括像素以及长、宽、颜色的描述信息。
 # 2 创建方式
+
 ## 2.1 BitmapFactory
 BitmapFactory 可以从文件、资源、数据流、字节数组中创建 `Bitmap` 对象，可以理解为一个工具类，主要用来解析、创建 `Bitmap` 对象，`BitmapFactory` 创建 `Bitmap` 包含下面所有函数，接下来我们来看看这些函数。
 ```java

@@ -400,4 +400,6 @@ public class Handler {
 
 Looper.loop() 是个死循环，不断调用 MessageQueue.next() 获取 Message ，并调用msg.target.dispatchMessage(msg) 切换到 Handler 来分发消息，以此来完成消息的回调。
 
+**造成ANR的不是主线程阻塞，而是主线程的Looper消息处理过程发生了任务阻塞，无法响应手势操作，不能及时刷新UI**。
+
 https://blog.csdn.net/start_mao/article/details/98963744
