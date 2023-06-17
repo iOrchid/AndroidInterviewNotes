@@ -1,4 +1,4 @@
-﻿# Java面试题之多线程(一)
+# Java面试题之多线程(一)
 
 标签（空格分隔）： Java面试题 多线程
 
@@ -168,9 +168,8 @@ Java提供的终止方法只有一个stop,但是不建议使用此方法,因为�
 [一道多线程面试题引起的自我救赎](https://segmentfault.com/a/1190000006671595)
 
 
-  [1]: http://static.zybuluo.com/homiss/pdhum1e0sytingqzuw8adnla/image_1bjs2pe46pu51j4n15er1h6g1o879.png
-  [2]: http://static.zybuluo.com/homiss/w28vukxabw2kig93fb07552i/image_1bjs2qote9t8eq8cuo1bccbmom.png
-
+[1]: http://static.zybuluo.com/homiss/pdhum1e0sytingqzuw8adnla/image_1bjs2pe46pu51j4n15er1h6g1o879.png
+[2]: http://static.zybuluo.com/homiss/w28vukxabw2kig93fb07552i/image_1bjs2qote9t8eq8cuo1bccbmom.png
 
 
 

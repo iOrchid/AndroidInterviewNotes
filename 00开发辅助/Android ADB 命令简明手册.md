@@ -2443,3 +2443,84 @@ Otherwise check for a confirmation dialog on your device.
 在手机上安装一个终端然后执行 su 提示没有该命令，这不正常。
 
 于是删除该模拟器后重新下载安装一次，这次就正常了。
+
+
+
+
+
+> 附简明版
+
+```shell
+连接设备
+
+adb devices——查看当前连接的设备, 连接到计算机的 android 设备或者模拟器将会列出显示
+
+adb connect 192.168.0.122:5555——连接adb
+
+adb shell——进入adb命令行
+
+adb shell [command]——执行一条 shell 命令
+
+服务重启
+
+adb kill-server——停止adb服务
+
+adb start-server——开启adb服务
+
+系统管理
+
+adb shell getprop ro.build.version.release——查看手机系统版本
+
+adb push <本地路径> <远程路径>——推送文件到终端
+
+adb pull <远程路径> <本地路径>——从终端拉取文件
+
+adb shell dumpsys window w |findstr \/ |findstr name=——查看当前启用的包名
+
+adb shell monkey -p 包名 -vvv 1——通过获取到的包名获取到启动 app 的 activity
+
+adb shell ps | findstr <包名>——列出当前进程
+
+adb shell am force-stop <包名>——杀死某个包的进程
+
+安装卸载
+
+adb install <apk文件路径>——这个命令将指定的apk文件安装到设备上
+
+adb -s deviceid install <apk在PC端的路径>
+
+adb shell pm install <apk在移动端的路径>
+
+adb uninstall <包名>——卸载包
+
+查看日志
+
+adb logcat ——打印默认日志数据
+
+adb logcat -v time——需要打印日志详细时间的简单数据
+
+adb logcat *:E——需要打印级别为Error的信息
+
+adb logcat -v time *:E——需要打印时间和级别是Error的信息
+
+adb logcat -v time > D:\log.txt——将日志保存到电脑固定的位置，比如D:\log.txt
+
+adb logcat -v time | find "packagename" >D:\log111111.txt——通过包名保存日志
+
+logcat -b radio——无线通讯的日志非常多，去掉没有必要的日志
+
+查看bug报告
+
+adb bugreport
+
+性能相关
+
+adb shell dumpsys meminfo <包名>——获取内存
+
+adb shell dumpsys cpuinfo | findstr <包名>——获取 CPU
+
+adb shell top -n 1 | findstr <包名>——获取 CPU
+
+adb shell dumpsys gfxinfo <包名>——获取流畅度相关
+```
+
