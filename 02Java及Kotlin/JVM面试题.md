@@ -1,4 +1,4 @@
-﻿# JVM面试题
+# JVM面试题
 
 标签（空格分隔）： Java面试题 
 
@@ -138,7 +138,7 @@ Java对象由三个部分组成：对象头、实例数据、对齐填充。
 - 弱引用：描述有用但不是必须的对象，在下一次GC时被回收
 - 虚引用（幽灵引用/幻影引用）:无法通过虚引用获得对象，用PhantomReference实现虚引用，虚引用用来在GC时返回一个通知。
 
-###GC是什么？为什么要有GC？ 
+### GC是什么？为什么要有GC？ 
 答：GC是垃圾收集的意思，内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java语言没有提供释放已分配内存的显示操作方法。Java程序员不用担心内存管理，因为垃圾收集器会自动进行管理。要请求垃圾收集，可以调用下面的方法之一：System.gc() 或Runtime.getRuntime().gc() ，但JVM可以屏蔽掉显示的垃圾回收调用。 
 垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器通常是作为一个单独的低优先级的线程运行，不可预知的情况下对内存堆中已经死亡的或者长时间没有使用的对象进行清除和回收，程序员不能实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收。在Java诞生初期，垃圾回收是Java最大的亮点之一，因为服务器端的编程需要有效的防止内存泄露问题，然而时过境迁，如今Java的垃圾回收机制已经成为被诟病的东西。移动智能终端用户通常觉得iOS的系统比Android系统有更好的用户体验，其中一个深层次的原因就在于android系统中垃圾回收的不可预知性。
 
@@ -259,8 +259,8 @@ Sun JDK监控和故障处理命令有jps jstat jmap jhat jstack jinfo
 [JVM知识点总览-高级Java工程师面试必备][5]
 
 
-  [1]: http://static.zybuluo.com/homiss/002zo4zad3i97p6i5axx14sx/image_1bl9t6q6lab0okofov1umv7ct13.png
-  [2]: http://static.zybuluo.com/homiss/a7awn6tq4mzgvj79rlrrxp8q/image_1bl9t477ei1r1e0k193mpu61q2im.png
-  [3]: http://static.zybuluo.com/homiss/sy6f46raext7glayg82wbtxn/image_1bl9t1geg15lj58p41kd151k699.png
-  [4]: http://www.voidcn.com/blog/TRUE_LOVE1314/article/p-6166810.html
-  [5]: http://www.importnew.com/23792log/TRUE_LOVE1314/article/p-6166810.html
+[1]: http://static.zybuluo.com/homiss/002zo4zad3i97p6i5axx14sx/image_1bl9t6q6lab0okofov1umv7ct13.png
+[2]: http://static.zybuluo.com/homiss/a7awn6tq4mzgvj79rlrrxp8q/image_1bl9t477ei1r1e0k193mpu61q2im.png
+[3]: http://static.zybuluo.com/homiss/sy6f46raext7glayg82wbtxn/image_1bl9t1geg15lj58p41kd151k699.png
+[4]: http://www.voidcn.com/blog/TRUE_LOVE1314/article/p-6166810.html
+[5]: http://www.importnew.com/23792log/TRUE_LOVE1314/article/p-6166810.html

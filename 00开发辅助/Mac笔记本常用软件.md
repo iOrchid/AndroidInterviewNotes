@@ -16,11 +16,13 @@
 | Bartender                                         | 管理状态栏图标的工具                                         |
 | CodeRunner                                        | 代码编辑运行工具                                             |
 | Chrome/Firefox/Opera                              | 浏览器                                                       |
+| ClashX Pro                                        | 科学上网工具                                                 |
 | CleanMyMac/MacBooster/App Cleaner                 | 系统优化工具                                                 |
 | CheatSheet                                        | 查看当前软件的快捷键配置的工具                               |
 | Colorful folders / colorfolder                    | 文件夹美化工具                                               |
 | Command one/Total Finder                          | 增强的文件管理器，可替换finder                               |
 | Charles/Debookee                                  | 接口抓包工具                                                 |
+| Cursor                                            | Ai编程工具                                                   |
 | Dr.Antivirus/Antivirus one                        | 趋势安全软件（有和谐版，所以收录，另avast/kaspersky也很好）  |
 | Dash                                              | api文档管理                                                  |
 | Expressions                                       | 正则表达式检测工具                                           |
@@ -102,3 +104,4 @@ sudo spctl --master-disable # 这个是关闭软件签名的限制，相反enabl
 xattr -r -d com.apple.quarantine /Applications/App的名字.app# 这个命令基本用于修复提示损坏之类的无法打开破解软件的问题。
 codesign --force --deep --sign - /Application/Appname.app# 这个用于处理软件被修改后，来个系统自签名，使之正常使用。
 ```
+

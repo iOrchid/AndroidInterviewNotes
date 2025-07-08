@@ -1,7 +1,5 @@
 #### Android Studio高效开发插件及配置
 
-[![github](https://upload-images.jianshu.io/upload_images/2216307-c484a510d94ade19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)](https://github.com/zhiwei1990/android-jetpack-demo)
-
 > 当前`Android`开发毋庸置疑首选的`IDE`就是`AndroidStudio`，合理的设置和插件配置，会显著提高日常开发效率，个人开发环境配置如下，以供参考。`有部分Android开发者使用Intellij idea大体和AS使用相同，但注意存在AS项目于Idea项目不通用的情况，需要转换源码处理。`
 
 ###### 一、插件配置
@@ -72,15 +70,15 @@
 
   ```kotlin
   /**
-   * 作者： 志威  zhiwei.org
-   * 主页： Github: https://github.com/imzhiwei
+   * 作者： 志威
+   * 主页： Github: https://github.com/iOrchid
    * 日期： ${YEAR}年${MONTH}月${DAY}日 ${TIME}
    * 签名： 天行健，君子以自强不息；地势坤，君子以厚德载物。
    *      _              _           _     _   ____  _             _ _
    *     / \   _ __   __| |_ __ ___ (_) __| | / ___|| |_ _   _  __| (_) ___
    *    / _ \ | '_ \ / _` | '__/ _ \| |/ _` | \___ \| __| | | |/ _` | |/ _ \
    *   / ___ \| | | | (_| | | | (_) | | (_| |  ___) | |_| |_| | (_| | | (_) |
-   *  /_/   \_\_| |_|\__,_|_|  \___/|_|\__,_| |____/ \__|\__,_|\__,_|_|\___/  -- 志威 zhiwei.org
+   *  /_/   \_\_| |_|\__,_|_|  \___/|_|\__,_| |____/ \__|\__,_|\__,_|_|\___/  -- 志威
    *
    * You never know what you can do until you try !
    * ----------------------------------------------------------------

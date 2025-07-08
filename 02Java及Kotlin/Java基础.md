@@ -270,7 +270,7 @@ public class MyUtils {
 
 #### 31 try{}里有一个return语句，那么紧跟在这个try后的finally{}里的代码会不会被执行，什么时候被执行，在return前还是后?
 
-会执行，在方法返回调用者前执行。
+会执行，在return前执行。
 
 #### 32 阐述final、finally、finalize的区别？
 

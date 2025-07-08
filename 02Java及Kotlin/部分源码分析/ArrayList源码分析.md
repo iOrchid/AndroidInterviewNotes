@@ -474,7 +474,7 @@ private static int hugeCapacity(int minCapacity) {
 * ensureCapacityInternal() 判断当前是否是使用默认构造的函数，这时候 minCapacity  = MAX(10,1) = 10。
 * 紧接着调用 ensureExplicitCapacity(minCapacity )，判断是否需要扩容，此时 elementData.length = 0，显然，minCapacity - elementData.length > 0 成立，数组第一次扩容。
 * ensureCapacityInternal() 中判断 minCapacity - elementData.length > 0（10 - 0 > 0），成立，调用 grow() 方法扩容。
-* **grow** 为扩容核心方法，旧容量 oldCapacity ，新容量 newCapacity = oldCapacity + (oldCapacity >> 1)，所以 ArrayList 每次扩容之后容量都会变为原来的 1.5 倍左右。
+* **grow** 为扩容核心方法，旧容量 oldCapacity ，新容量 newCapacity = oldCapacity + (oldCapacity >> 1)，所以 ArrayList 每次扩容之后容量都会变为原来的 **1.5** 倍左右。
   * 当 add 第 1 个元素时，oldCapacity = 0，newCapacity - minCapacity < 0 （0 - 10  <  0 ）,newCapacity = 10，elementData = **Arrays.copyOf**(elementData, newCapacity) 将原数组扩容成 10 。
   * 当 add 第 11 个元素时，oldCapacity = 11，newCapacity  = 15，第一个判断和第二个判断都不成立，将原数组扩容成 10。
   * 以此类推······

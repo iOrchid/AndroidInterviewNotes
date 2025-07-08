@@ -200,11 +200,22 @@ shell常用`number`和`string`，其中`string`可以单引号、双引号或者
     - `%%`最大限度
   
   ```shell
-  # 匹配到“”中间的字符
-  name=rootproject.name = "shellScript"
-  #想要获取shellScript这个字符
-  echo ${${name#*\"}%\"}
-  # 这里是用的都是最小匹配，如果是## 或 %% 就匹配不到，因为## 会找到最后一个“之后
+  #示例 匹配到rootProject.name = "shellScript"中间的字符 shellScript
+  # 在terminal中，和读取字符是有些差异的，例如
+  ~> name=“shellScrpit"
+  ~> echo $name
+  ~> shellScript
+  # 输出的就是shellScript 不带“”的，所以此处定义
+  ~> name='rootProject.name = "MotoMate"'
+  ~> echo $name 
+  ~> rootProject.name = "shellScript"
+  #使用匹配符号# 也就是从左侧开始向后，遇到第一个符合规则的，即开始截取后面的
+  ~> echo ${name#*\"}
+  ~> shellScript"
+  #再使用%匹配符号，从右侧向左，遇到符合规则的，就截取向前
+  ~> echo ${${name#*\"}%*\"}
+  ~> shellScript
+  # 这里是用的都是最小匹配(第一次遇到符合条件的就开始匹配)，如果是## 或 %% 就匹配不到，因为## 会找到最后一个“之后（最后符合条件的，开始匹配）
   ```
 
 ### 6、Shell数组
@@ -984,29 +995,23 @@ shell也使用`break`和`continue`来跳出循环。
 
 case语句区别于C语言，用esac作为结束标志，`)`和`;;`标识每个case。
 
-
-
 ## Shell函数
 
 shell可以自定义函数，然后自己调用。函数格式：
 
 ```sh
-#function 关键字为可选项，参数也是可选
+#function 关键字为可选项，参数也是可选，如果没有function关键词，则函数格式必须为funName()带括号。若有function 则()可省略
 [ function ] funname [()]
-
 {
-  
   action;
-  
   [return int;]
-  
 }
 ```
 
 **说明：**
 
-1. 可以带function fun()定义，也可以fun()定义，不带参数。
-2. 参数返回，可以显示加: return 返回，若不加，则返回最后一条指令结果。
+1. 可以带**function** 关键字，也可以直接函数名funName()定义，不带参数。
+2. 参数返回，可以显式加 `return` 返回，若不加，则**返回最后一条**指令结果。
 
 ```shell
 #!/bin/bash
@@ -1055,7 +1060,7 @@ echo "输入的两个数字之和为 $? !"
   funWithParam(){
       echo "第一个参数为 $1 !"
       echo "第二个参数为 $2 !"
-      echo "第十个参数为 $10 !"
+      echo "第十个参数为 $10 !"# 注意这里，接收的就不是第10的参数，要用下面的形式${10}接收
       echo "第十个参数为 ${10} !"
       echo "第十一个参数为 ${11} !"
       echo "参数总数有 $# 个!"

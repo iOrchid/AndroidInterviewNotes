@@ -1,4 +1,4 @@
-## 1 ConcurrentHashMap 1.7
+## 一、ConcurrentHashMap 1.7
 
 ConcurrentHashMap 是 Java1.5 中引用的一个**线程安全的支持高并发**的 HashMap 集合类。
 
@@ -139,7 +139,7 @@ inal V put(K key, int hash, V value, boolean onlyIfAbsent) {
 }
 ```
 
-上面有两个比较重要的方法 tryLock() 和 canAndLockForPut()，意思就是尝试获取锁，如果获取失败肯定就有其他线程存在竞争，则利用 scanAndLockForPut() 自旋获取锁。
+上面有两个比较重要的方法 tryLock() 和 scanAndLockForPut()，意思就是尝试获取锁，如果获取失败肯定就有其他线程存在竞争，则利用 scanAndLockForPut() 自旋获取锁。
 
 ```java
 private HashEntry<K,V> scanAndLockForPut(K key, int hash, V value) {
@@ -181,7 +181,7 @@ private HashEntry<K,V> scanAndLockForPut(K key, int hash, V value) {
 
 1. 通过 key ，获取当前 Segment 并定位到 HashEntry。
 2. 遍历 HashEntry，如果不为空则判断传入的 key 和当前遍历的 key 是否相等，相等则覆盖旧的 value。
-3. 不为空则新建 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容。
+3. 若为空则新建 HashEntry 并加入到 Segment 中，同时会先判断是否需要扩容。
 4. 最后解除 scanAndLockForPut() 中所获取当前 Segment 的锁。
 
 ### 1.3 get
@@ -209,7 +209,7 @@ public V get(Object key) {
 
 将 Key 通过 Hash 之后定位到具体的 Segment ，再通过一次 Hash 定位到具体的元素上。
 
- HashEntry 中的 value 是用 volatile 关键词修饰的，保证内存可见性，每次获取时都是最新值。
+ HashEntry 中的 value 是用 **volatile** 关键词修饰的，保证内存可见性，每次获取时都是最新值。
 
 ### 1.4 rehash
 
@@ -265,7 +265,7 @@ private void rehash(HashEntry<K,V> node) {
 }
 ```
 
-## 2 ConcurrentHashMap 1.8
+## 二、ConcurrentHashMap 1.8
 
 1.7 已经解决了并发问题，并且能支持 N 个 Segment 这么多次数的并发，但是查询遍历链表效率太低，ConcurrentHashMap 1.8 抛弃 **Segment 分段锁**，而采用了  CAS + synchronized 来保证并发安全性。数据结构**Segment 数组 + HashEntry 数组 + 链表**也变成 **Node 数组 + 链表 / 红黑树**。
 

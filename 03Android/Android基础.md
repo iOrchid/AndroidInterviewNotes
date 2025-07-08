@@ -397,7 +397,7 @@ res：会在 R 文件中生成 id 标记，资源在打包时如果使用到则�
 #### 角色
 
 * Handler : 负责发送并处理消息
-* Looper：：负责关联线程以及消息的分发，在该线程下从 MessageQueue 获取 Message，分发给 Handler ；
+* Looper：负责关联线程以及消息的分发，在该线程下从 MessageQueue 获取 Message，分发给 Handler ；
 * MessageQueue ：消息队列，负责消息的存储与管理，负责管理由 Handler 发送过来的 Message；
 * Message：消息，封装信息；
 
@@ -575,7 +575,7 @@ Handler 允许我们发送延时消息，如果在延时期间用户关闭了 Ac
 
 ##### 主线程的死循环一直运行是不是特别消耗CPU资源呢？
 
-涉及到 Linux pipe/epoll 机制，简单说就是在主线程的 MessageQueue 没有消息时，便阻塞在loop的 queue.next() 中的 nativePollOnce() 方法里，此时主线程会释放 CPU 资源进入休眠状态，直到下个消息到达或者有事务发生，通过往 pipe 管道写端写入数据来唤醒主线程工作。这里采用的 epoll 机制，是一种IO多路复用机制，可以同时监控多个描述符，当某个描述符就绪(读或写就绪)，则立刻通知相应程序进行读或写操作，本质是同步I/O，即读写是阻塞的。所以说，主线程大多数时候都是处于休眠状态，并不会消耗大量CPU资源。
+涉及到 Linux pipe/epoll 机制，简单说就是在主线程的 MessageQueue 没有消息时，便阻塞在loop的 queue.next() 中的 nativePollOnce() 方法里，此时主线程会释放 CPU 资源进入休眠状态，直到下个消息到达或者有事务发生，通过往 pipe 管道写端写入数据来唤醒主线程工作。这里采用的 epoll 机制，是一种IO多路复用机制，可以同时监控多个描述符，当某个描述符就绪(读或写就绪)，则立刻通知相应程序进行读或写操作，本质是同步I/O，即读写是阻塞的。所以说，**主线程大多数时候都是处于休眠状态，并不会消耗大量CPU资源**。
 
 ##### handler postDelay这个延迟是怎么实现的？
 

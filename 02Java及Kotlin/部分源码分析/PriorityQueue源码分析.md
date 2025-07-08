@@ -1,6 +1,6 @@
 ## 1 简介
 
-PriorityQueue 是一个基于优先级的无界优先队列，添加到 PriorityQueue 的元素都经过会自动排序，默认实现的是最小堆，也可以通过 Comparator接口进行自定义排序。
+PriorityQueue 是一个基于**优先级的无界优先队列**，添加到 PriorityQueue 的元素都经过会自动排序，默认实现的是最小堆，也可以通过 Comparator接口进行自定义排序。
 
 ```java
 public static void main(String[] args) {

@@ -58,7 +58,7 @@
         * [偏向锁](#偏向锁)
     * [十三、多线程开发良好的实践](#十三多线程开发良好的实践)
     * [参考资料](#参考资料)
-<!-- GFM-TOC -->
+    <!-- GFM-TOC -->
 
 
 
@@ -121,7 +121,7 @@ public static void main(String[] args) throws ExecutionException, InterruptedExc
 
 同样也是需要实现 run() 方法，因为 Thread 类也实现了 Runable 接口。
 
-当调用 start() 方法启动一个线程时，虚拟机会将该线程放入就绪队列中等待被调度，当一个线程被调度时会执行该线程的 run() 方法。
+当调用 start() 方法启动一个线程时，虚拟机会将该**线程放入就绪队列**中等待被调度，当一个线程被调度时会执行该线程的 run() 方法。
 
 ```java
 public class MyThread extends Thread {
@@ -188,7 +188,7 @@ public static void main(String[] args) {
 
 Thread.sleep(millisec) 方法会休眠当前正在执行的线程，millisec 单位为毫秒。
 
-sleep() 可能会抛出 InterruptedException，因为异常不能跨线程传播回 main() 中，因此必须在本地进行处理。线程中抛出的其它异常也同样需要在本地进行处理。
+sleep() 可能会抛出 InterruptedException，因为**异常不能跨线程**传播回 main() 中，因此必须在本地进行处理。线程中抛出的其它异常也同样需要在本地进行处理。
 
 ```java
 public void run() {
@@ -242,11 +242,12 @@ public static void main(String[] args) throws InterruptedException {
     Thread thread1 = new MyThread1();
     thread1.start();
     thread1.interrupt();
+  	//异常不会跨线程，所以上面thread处理try catch了自身的exception，不会影响main线程向下执行
     System.out.println("Main run");
 }
 ```
 
-```html
+```shell
 Main run
 java.lang.InterruptedException: sleep interrupted
     at java.lang.Thread.sleep(Native Method)
@@ -257,7 +258,7 @@ java.lang.InterruptedException: sleep interrupted
 
 ### interrupted()
 
-如果一个线程的 run() 方法执行一个无限循环，并且没有执行 sleep() 等会抛出 InterruptedException 的操作，那么调用线程的 interrupt() 方法就无法使线程提前结束。
+如果一个线程的 run() 方法执行一个无限循环，并且没有执行 sleep() 等会抛出 InterruptedException 的操作，那么调用线程的 **interrupt() 方法就无法使线程提前结束**。
 
 但是调用 interrupt() 方法会设置线程的中断标记，此时调用 interrupted() 方法会返回 true。因此可以在循环体中使用 interrupted() 方法来判断线程是否处于中断状态，从而提前结束线程。
 
@@ -1333,7 +1334,7 @@ synchronized 和 ReentrantLock。
 
 #### 1. CAS
 
-乐观锁需要操作和冲突检测这两个步骤具备原子性，这里就不能再使用互斥同步来保证了，只能靠硬件来完成。硬件支持的原子性操作最典型的是：比较并交换（Compare-and-Swap，CAS）。CAS 指令需要有 3 个操作数，分别是内存地址 V、旧的预期值 A 和新值 B。当执行操作时，只有当 V 的值等于 A，才将 V 的值更新为 B。
+乐观锁需要操作和冲突检测这两个步骤具备原子性，这里就不能再使用互斥同步来保证了，只能靠硬件来完成。硬件支持的原子性操作最典型的是：**比较并交换（Compare-and-Swap，CAS）**。CAS 指令需要有 3 个操作数，分别是内存地址 V、旧的预期值 A 和新值 B。当执行操作时，只有当 V 的值等于 A，才将 V 的值更新为 B。
 
 #### 2. AtomicInteger
 

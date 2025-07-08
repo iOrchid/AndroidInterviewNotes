@@ -46,9 +46,8 @@ adb [-d|-e|-s <serialNumber>] <command>
 
 在多个设备/模拟器连接的情况下较常用的是 `-s <serialNumber>` 参数，serialNumber 可以通过 `adb devices` 命令获取。如：
 
-```
+```shell
 $ adb devices
-
 List of devices attached
 cf264b8f	device
 emulator-5554	device
@@ -75,7 +74,7 @@ adb -s 10.129.164.6:5555 install test.apk
 
 启动 adb server 命令：
 
-```
+```shell
 adb start-server
 ```
 
@@ -83,7 +82,7 @@ adb start-server
 
 停止 adb server 命令：
 
-```
+```shell
 adb kill-server
 ```
 
@@ -91,13 +90,13 @@ adb kill-server
 
 命令：
 
-```
+```shell
 adb version
 ```
 
 示例输出：
 
-```
+```shell
 Android Debug Bridge version 1.0.36
 Revision 8f855a3d9b35-android
 ```
@@ -110,7 +109,7 @@ adb 的运行原理是 PC 端的 adb server 与手机端的守护进程 adbd 建
 
 命令：
 
-```
+```shell
 adb root
 ```
 
